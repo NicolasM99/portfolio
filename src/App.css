@@ -5,5 +5,14 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  /* background-color: white; */
+}
+
+.dark {
+  color: black;
   background-color: white;
+}
+.light {
+  background-color: black;
+  color: white;
 }

@@ -3,7 +3,7 @@ import { useSpring, animated as anim } from "react-spring";
 import "./floating-button.css";
 
 const fast = { tension: 1200, friction: 20 };
-const slow = { mass: 10, friction: 200 };
+// const slow = { mass: 10, friction: 200 };
 const trans = (x, y) => `translate3d(${x}px,${y}px,0) translate3d(-50%,-50%,0)`;
 function FloatingButton(props) {
   const [{ pos1 }, setPos1] = useSpring(() => ({
@@ -49,6 +49,7 @@ function FloatingButton(props) {
 
     window.addEventListener("mousemove", handler);
     return () => window.removeEventListener("mousemove", handler);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
