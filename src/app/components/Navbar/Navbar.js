@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import { Navbar as Navb, Nav, Button } from "react-bootstrap";
-import { NavHashLink } from "react-router-hash-link";
 import { useTranslation } from "react-i18next";
 import ROUTES from "../../router/routes.json";
 
 const RenderNavHashLink = ({ route, label }) => {
   const scrollWithOffset = (el) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    el.preventDefault();
+    const _href = el.target.href;
+    const elementId = _href.substring(_href.indexOf("#") + 1, _href.length);
+    const yCoordinate =
+      document.getElementById(elementId).getBoundingClientRect().top +
+      document.getElementById("#body-container").scrollTop;
     const yOffset = -70;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+    console.log(yCoordinate);
+    document
+      .getElementById("#body-container")
+      .scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
   return (
-    <Nav.Link
-      scroll={scrollWithOffset}
-      as={NavHashLink}
-      smooth
-      replace
-      to={`#${route}`}
-    >
+    <Nav.Link onClick={scrollWithOffset} href={`#${route}`}>
       {label}
     </Nav.Link>
   );
@@ -31,7 +32,7 @@ function Navbar({ theme, setTheme }) {
     setLanguage(language === "es" ? "en" : "es");
   };
   return (
-    <Navb collapseOnSelect fixed="top" expand="lg">
+    <Navb id="custom-navbar" collapseOnSelect expand="lg" fixed="top">
       <Navb.Brand>
         <Button onClick={() => changeLanguage()} variant="primary">
           {language === "es" ? "EN" : "ES"}

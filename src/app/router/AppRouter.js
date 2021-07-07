@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useState } from "react";
-import { Spinner } from "react-bootstrap";
 import { Switch, Route, Redirect } from "react-router-dom";
+import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 import Navbar from "../components/Navbar/Navbar";
 import ROUTES from "./routes.json";
 
@@ -10,9 +10,9 @@ const Error404 = lazy(() => import("../pages/Error404"));
 function AppRouter(props) {
   const [theme, setTheme] = useState("dark");
   return (
-    <Suspense fallback={<Spinner animation="grow" />}>
-      <Navbar theme={theme} setTheme={setTheme} />
+    <Suspense fallback={<LoadingScreen />}>
       <div className={theme}>
+        <Navbar theme={theme} setTheme={setTheme} />
         <Switch>
           <Route path="/" exact>
             <Redirect to={"/" + ROUTES.HOME} />
