@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useSpring, animated as anim } from "react-spring";
-import "./floating-button.css";
 
 const fast = { tension: 1200, friction: 20 };
 // const slow = { mass: 10, friction: 200 };

@@ -1,0 +1,15 @@
+@import "assets/general_styles/_config.scss";
+@import "assets/general_styles/_themes.scss";
+@import "app/components/FloatingButton/floating-button";
+@import "app/components/LoadingScreen/loading-screen";
+@import "app/components/Navbar/navbar";
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /* background-color: white; */
+}

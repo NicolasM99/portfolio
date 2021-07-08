@@ -13,7 +13,7 @@ function Home() {
         position: "relative",
         overflowY: "scroll",
         height: "100vh",
-        scrollBehavior: "smooth",
+        // scrollBehavior: "smooth",
       }}
     >
       <div id="home" style={{ height: "100vh" }}>

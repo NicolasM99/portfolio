@@ -3,7 +3,7 @@ import { Navbar as Navb, Nav, Button } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import ROUTES from "../../router/routes.json";
 
-const RenderNavHashLink = ({ route, label }) => {
+const RenderNavHashLink = ({ route, label, index }) => {
   const scrollWithOffset = (el) => {
     el.preventDefault();
     const _href = el.target.href;
@@ -18,7 +18,11 @@ const RenderNavHashLink = ({ route, label }) => {
       .scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
   return (
-    <Nav.Link onClick={scrollWithOffset} href={`#${route}`}>
+    <Nav.Link
+      id={`navlink-${index}`}
+      onClick={scrollWithOffset}
+      href={`#${route}`}
+    >
       {label}
     </Nav.Link>
   );
@@ -32,7 +36,7 @@ function Navbar({ theme, setTheme }) {
     setLanguage(language === "es" ? "en" : "es");
   };
   return (
-    <Navb id="custom-navbar" collapseOnSelect expand="lg" fixed="top">
+    <Navb id="custom-navbar" fixed="top">
       <Navb.Brand>
         <Button onClick={() => changeLanguage()} variant="primary">
           {language === "es" ? "EN" : "ES"}
@@ -45,20 +49,21 @@ function Navbar({ theme, setTheme }) {
         </Button>
       </Navb.Brand>
       <Navb.Toggle aria-controls="basic-navbar-nav" />
-      <Navb.Collapse>
-        <Nav>
-          {Object.entries(ROUTES).map(
-            (item, idx) =>
-              item[0] !== "ERROR_404_NOT_FOUND" && (
-                <RenderNavHashLink
-                  key={idx}
-                  route={item[1]}
-                  label={t(`general.${item[1]}.title`)}
-                />
-              )
-          )}
-        </Nav>
-      </Navb.Collapse>
+      {/* <Navb.Collapse> */}
+      <Nav>
+        {Object.entries(ROUTES).map(
+          (item, idx) =>
+            item[0] !== "ERROR_404_NOT_FOUND" && (
+              <RenderNavHashLink
+                key={idx}
+                route={item[1]}
+                index={idx}
+                label={t(`general.${item[1]}.title`)}
+              />
+            )
+        )}
+      </Nav>
+      {/* </Navb.Collapse> */}
     </Navb>
   );
 }
