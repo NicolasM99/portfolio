@@ -1,0 +1,31 @@
+.home {
+  @media (max-width: $max-lg) {
+    padding-bottom: 70px;
+    text-align: center;
+  }
+  @media (max-width: $max-md) {
+  }
+}
+
+#cube-img {
+  @media (max-width: $max-md) {
+    height: 190px;
+  }
+}
+/* HOME */
+
+.home-buttons-container {
+  // @media (min-width: $lg) {
+  //   display: grid;
+  //   grid-template-columns: repeat(2, 1fr);
+  //   gap: 1rem;
+  //   padding: 0 (15 + 100%/12);
+  // }
+  // @media (max-width: $max-lg) {
+  display: flex;
+  justify-content: center;
+  .btn {
+    margin: 0 5px;
+    // }
+  }
+}

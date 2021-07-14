@@ -43,7 +43,7 @@ function HomeSection(props) {
   return (
     <Row
       // id={ROUTES.HOME}
-      className="general-section-container"
+      className="general-section-container home"
       style={{
         position: "sticky",
         width: "100%",
@@ -53,9 +53,9 @@ function HomeSection(props) {
       }}
     >
       <Col lg={4}>
-        <h3 className="font-weight-normal">Un gusto verte, soy</h3>
+        <h4 className="font-weight-normal">Un gusto verte, soy</h4>
         <h1>Nicolás Moreno</h1>
-        <h3>Ingeniero en Multimedia</h3>
+        <h4>Ingeniero en Multimedia</h4>
         <p>Realizo herramientas y productos multimedia de alta calidad</p>
         <Link onClick={scrollWithOffset} to={"#" + ROUTES.PORTFOLIO}>
           Acerca de mí
@@ -63,6 +63,7 @@ function HomeSection(props) {
       </Col>
       <Col lg={4} className="text-center">
         <Image
+          id="cube-img"
           src="https://www.freeiconspng.com/thumbs/3d-cube-png/3d-cube-png-transparent-image-11.png"
           alt="cube-img"
         />
@@ -92,8 +93,12 @@ function HomeSection(props) {
           ))}
         </Row>
         <Row className="home-buttons-container">
-          <Button variant="outline-primary">CV</Button>
-          <Button variant="primary">Contacto</Button>
+          <div>
+            <Button variant="outline-primary">CV</Button>
+          </div>
+          <div>
+            <Button variant="primary">Contacto</Button>
+          </div>
         </Row>
       </Col>
     </Row>
