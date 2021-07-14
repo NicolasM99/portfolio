@@ -4,29 +4,41 @@ import { useTranslation } from "react-i18next";
 import ROUTES from "../../router/routes.json";
 import { scrollWithOffset } from "../../util/scrollWithOffset";
 import { useWindowDimensions } from "../../util/useWindowDimensions";
+import Tooltip from "../Tooltip/Tooltip";
 const icons = JSON.parse(
   `{"${ROUTES.HOME}": "house-user","${ROUTES.PORTFOLIO}": "briefcase","${ROUTES.ABILITIES}": "tools","${ROUTES.TRAJECTORY}": "globe-americas","${ROUTES.REFERENCES}": "id-card"}`
 );
 
 const RenderNavHashLink = ({ current, setCurrent, route, label, index }) => {
   return (
-    <Nav.Link
-      id={`navlink-${index}`}
-      onClick={(el) => {
-        if (current !== index) {
-          document
-            .getElementById("navlink-" + index)
-            .classList.remove("active");
-        }
-        setCurrent(index);
-        document.activeElement.blur();
-        scrollWithOffset(el);
-      }}
-      href={`#${route}`}
-    >
-      <i href={`#${route}`} className={`navbar-icon fa fa-${icons[route]}`} />{" "}
-      <span className="navlink-label">{label}</span>
-    </Nav.Link>
+    <Tooltip
+      label={label}
+      render={(ref, triggerHandler) => (
+        <Nav.Link
+          ref={(current !== index && ref) || null}
+          {...triggerHandler}
+          id={`navlink-${index}`}
+          onClick={(el) => {
+            if (current !== index) {
+              document
+                .getElementById("navlink-" + index)
+                .classList.remove("active");
+            }
+            setCurrent(index);
+            document.activeElement.blur();
+            scrollWithOffset(el);
+          }}
+          href={`#${route}`}
+        >
+          {" "}
+          <i
+            href={`#${route}`}
+            className={`navbar-icon fa fa-${icons[route]}`}
+          />{" "}
+          <span className="navlink-label">{label}</span>
+        </Nav.Link>
+      )}
+    />
   );
 };
 
@@ -42,15 +54,34 @@ function Navbar({ theme, setTheme }) {
   return (
     <Navb id="custom-navbar" fixed={width >= sizeRef.lg ? "top" : "bottom"}>
       <Navb.Brand>
-        <span className="btn-opt" onClick={() => changeLanguage()}>
-          {language === "es" ? "EN" : "ES"}
-        </span>
-        <span
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="btn-opt"
-        >
-          <i className={`fa fa-${theme === "light" ? "lightbulb" : "moon"}`} />
-        </span>
+        <Tooltip
+          label={t("general.change.language")}
+          render={(ref, triggerHandler) => (
+            <span
+              ref={ref}
+              {...triggerHandler}
+              className="btn-opt"
+              onClick={() => changeLanguage()}
+            >
+              {language === "es" ? "EN" : "ES"}
+            </span>
+          )}
+        />
+        <Tooltip
+          label={t("general.change.theme")}
+          render={(ref, triggerHandler) => (
+            <span
+              ref={ref}
+              {...triggerHandler}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="btn-opt"
+            >
+              <i
+                className={`fa fa-${theme === "light" ? "lightbulb" : "moon"}`}
+              />
+            </span>
+          )}
+        />
       </Navb.Brand>
       <Navb.Toggle aria-controls="basic-navbar-nav" />
       <Nav activeKey="">

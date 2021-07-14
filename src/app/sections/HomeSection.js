@@ -4,8 +4,8 @@ import {
   Row,
   Col,
   Image,
-  Tooltip,
-  OverlayTrigger,
+  // Tooltip,
+  // OverlayTrigger,
   Button,
   Modal,
 } from "react-bootstrap";
@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { scrollWithOffset } from "../util/scrollWithOffset";
 import { useTranslation } from "react-i18next";
 import cube from "../../assets/images/cube.png";
+import Tooltip from "../components/Tooltip/Tooltip";
 
 const social_media = [
   {
@@ -37,7 +38,7 @@ const social_media = [
   },
 ];
 
-const renderTooltip = (props, label) => (
+export const renderTooltip = (props, label) => (
   <Tooltip id="button-tooltip" {...props}>
     {label}
   </Tooltip>
@@ -76,27 +77,26 @@ function HomeSection(props) {
           <Image id="cube-img" src={cube} alt="cube-img" />
           <Row className="social-media-icon-container">
             {social_media.map((item, idx) => (
-              <OverlayTrigger
+              <Tooltip
                 key={idx}
-                placement="bottom"
-                delay={{ show: 250, hide: 200 }}
-                overlay={(props) => renderTooltip(props, item.name)}
-              >
-                {({ ref, ...triggerHandler }) => (
-                  <a
-                    ref={ref}
-                    {...triggerHandler}
-                    href={item.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    key={idx}
-                  >
-                    <i
-                      className={`fab fa-${item.icon} fa-2x social-media-icon`}
-                    />
-                  </a>
-                )}
-              </OverlayTrigger>
+                label={item.name}
+                render={(ref, triggerHandler) => {
+                  return (
+                    <a
+                      ref={ref}
+                      {...triggerHandler}
+                      href={item.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      key={idx}
+                    >
+                      <i
+                        className={`fab fa-${item.icon} fa-2x social-media-icon`}
+                      />
+                    </a>
+                  );
+                }}
+              />
             ))}
           </Row>
           <Row className="home-buttons-container">
