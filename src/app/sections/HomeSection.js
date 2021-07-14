@@ -12,6 +12,8 @@ import {
 import { Link } from "react-router-dom";
 import { scrollWithOffset } from "../util/scrollWithOffset";
 import { useTranslation } from "react-i18next";
+import cube from "../../assets/images/cube.png";
+
 const social_media = [
   {
     name: "Behance",
@@ -31,7 +33,7 @@ const social_media = [
   {
     name: "Instagram",
     icon: "instagram-square",
-    link: "",
+    link: "https://www.instagram.com/",
   },
 ];
 
@@ -71,11 +73,7 @@ function HomeSection(props) {
           </Link>
         </Col>
         <Col lg={4} className="text-center">
-          <Image
-            id="cube-img"
-            src="https://www.freeiconspng.com/thumbs/3d-cube-png/3d-cube-png-transparent-image-11.png"
-            alt="cube-img"
-          />
+          <Image id="cube-img" src={cube} alt="cube-img" />
           <Row className="social-media-icon-container">
             {social_media.map((item, idx) => (
               <OverlayTrigger

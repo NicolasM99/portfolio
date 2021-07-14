@@ -55,4 +55,8 @@ body,
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (max-height: 675px) {
+    font-size: 90% !important;
+  }
 }

@@ -1,9 +1,11 @@
 .home {
   @media (max-width: $max-lg) {
-    padding-bottom: 70px;
+    padding: 85px 0;
     text-align: center;
   }
-  @media (max-width: $max-md) {
+  @media (max-width: $max-sm) {
+    padding-top: 0;
+    padding-bottom: 85px;
   }
 }
 
