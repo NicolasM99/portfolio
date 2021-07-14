@@ -14,14 +14,11 @@ function AppRouter(props) {
       <div className={theme}>
         <Navbar theme={theme} setTheme={setTheme} />
         <Switch>
-          <Route path="/" exact>
-            <Redirect to={"/" + ROUTES.HOME} />
-          </Route>
           <Route
             path={"/" + ROUTES.ERROR_404_NOT_FOUND}
             component={Error404Page}
           />
-          <Route path={"/" + ROUTES.HOME} component={HomePage} exact />
+          <Route path="/" component={HomePage} exact />
           <Redirect to={"/" + ROUTES.ERROR_404_NOT_FOUND} />
         </Switch>
       </div>

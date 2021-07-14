@@ -5,7 +5,13 @@
   "general.abilities.title": "Abilities",
   "general.trajectory.title": "Trajectory",
   "general.references.title": "References",
+  "general.nicolas.moreno": "Nicolás Moreno",
+  "general.multimedia.engineer": "Multimedia Engineer",
   "home.title": "Home",
+  "home.greetings": "Glad to see you, I'm",
+  "home.description": "I design and develop high quality multimedia applications and products.",
+  "home.about.me": "About me",
+  "home.contact": "Contact me",
   "error404.title": "Error 404 :(",
   "error404.description": "Sorry, we couldn't find this page."
 }

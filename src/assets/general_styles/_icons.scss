@@ -1,3 +1,13 @@
+@keyframes up_and_down {
+  0%,
+  100% {
+    transform: translate(0, 5px);
+  }
+  50% {
+    transform: translate(0);
+  }
+}
+
 .social-media-icon-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -9,6 +19,6 @@
   text-align: center;
 }
 
-.navbar-icon {
-  // margin-right: 3px;
+.animate-up-and-down {
+  animation: up_and_down 1s infinite ease-in-out;
 }
