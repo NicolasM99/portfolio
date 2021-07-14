@@ -4,8 +4,8 @@ import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 import Navbar from "../components/Navbar/Navbar";
 import ROUTES from "./routes.json";
 
-const Home = lazy(() => import("../pages/Home"));
-const Error404 = lazy(() => import("../pages/Error404"));
+const HomePage = lazy(() => import("../pages/HomePage"));
+const Error404Page = lazy(() => import("../pages/Error404Page"));
 
 function AppRouter(props) {
   const [theme, setTheme] = useState("dark");
@@ -17,8 +17,11 @@ function AppRouter(props) {
           <Route path="/" exact>
             <Redirect to={"/" + ROUTES.HOME} />
           </Route>
-          <Route path={"/" + ROUTES.ERROR_404_NOT_FOUND} component={Error404} />
-          <Route path={"/" + ROUTES.HOME} component={Home} exact />
+          <Route
+            path={"/" + ROUTES.ERROR_404_NOT_FOUND}
+            component={Error404Page}
+          />
+          <Route path={"/" + ROUTES.HOME} component={HomePage} exact />
           <Redirect to={"/" + ROUTES.ERROR_404_NOT_FOUND} />
         </Switch>
       </div>

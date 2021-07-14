@@ -55,10 +55,10 @@ function FloatingButton(props) {
     <>
       <svg style={{ position: "absolute", width: 0, height: 0 }}>
         <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="15" />
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="3" />
           <feColorMatrix
             in="blur"
-            values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 15 -7"
+            values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 3 -2"
           />
         </filter>
       </svg>

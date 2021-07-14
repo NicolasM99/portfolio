@@ -1,8 +1,45 @@
 @import "assets/general_styles/_config.scss";
+@import "assets/general_styles/fontawesome/fontawesome.scss";
+@import "assets/general_styles/fontawesome/brands.scss";
+@import "assets/general_styles/fontawesome/regular.scss";
+@import "assets/general_styles/fontawesome/solid.scss";
 @import "assets/general_styles/_themes.scss";
+@import "assets/general_styles/_icons.scss";
+@import "assets/general_styles/_buttons.scss";
+@import "assets/general_styles/_headers.scss";
 @import "app/components/FloatingButton/floating-button";
 @import "app/components/LoadingScreen/loading-screen";
 @import "app/components/Navbar/navbar";
+@import "app/components/GeneralSection/general-section";
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/Open_Sans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: bold;
+  src: url("./assets/fonts/Open_Sans/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: bold;
+  src: url("./assets/fonts/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/Poppins/Poppins-Regular.ttf");
+}
+
 html,
 body,
 #root {
@@ -11,5 +48,9 @@ body,
   margin: 0;
   padding: 0;
   position: relative;
-  /* background-color: white; */
+
+  font-family: "Open Sans";
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

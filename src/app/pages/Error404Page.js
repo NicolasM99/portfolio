@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ROUTES from "../router/routes.json";
-function Error404(props) {
+function Error404Page(props) {
   const { t } = useTranslation();
   return (
     <div>
@@ -13,4 +13,4 @@ function Error404(props) {
   );
 }
 
-export default Error404;
+export default Error404Page;

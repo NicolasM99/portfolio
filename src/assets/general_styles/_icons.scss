@@ -1,0 +1,14 @@
+.social-media-icon-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 1rem (15 + 100%/12);
+}
+
+.social-media-icon {
+  text-align: center;
+}
+
+.navbar-icon {
+  margin-right: 3px;
+}

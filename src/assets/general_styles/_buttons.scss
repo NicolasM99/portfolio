@@ -1,0 +1,36 @@
+/* GENERAL BUTTONS*/
+
+.btn {
+  min-width: 100px;
+}
+
+/* NAVBAR */
+
+.btn-opt {
+  text-align: center;
+  width: 45px;
+  align-content: center;
+  border-radius: 8px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+/* HOME */
+
+.home-buttons-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0 (15 + 100%/12);
+}
