@@ -1,33 +1,22 @@
 import React, { useState } from "react";
-import { Navbar as Navb, Nav, Button } from "react-bootstrap";
+import { Navbar as Navb, Nav } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import ROUTES from "../../router/routes.json";
+import { scrollWithOffset } from "../../util/scrollWithOffset";
 
 const icons = JSON.parse(
   `{"${ROUTES.HOME}": "house-user","${ROUTES.PORTFOLIO}": "briefcase","${ROUTES.ABILITIES}": "tools","${ROUTES.TRAJECTORY}": "globe-americas","${ROUTES.REFERENCES}": "id-card"}`
 );
 
 const RenderNavHashLink = ({ route, label, index }) => {
-  const scrollWithOffset = (el) => {
-    el.preventDefault();
-    // document.getElementById("navlink-" + index).classList;
-    // console.log(document.getElementById("navlink-" + index).classList[1]);
-    document.getElementById("navlink-" + index).classList.remove("active");
-    // console.log(document.getElementById("navlink-" + index).classList);
-    const _href = el.target.parentElement.href || el.target.href;
-    const elementId = _href.substring(_href.indexOf("#") + 1, _href.length);
-    const yCoordinate =
-      document.getElementById(elementId).getBoundingClientRect().top +
-      document.getElementById("#body-container").scrollTop;
-    const yOffset = 0;
-    document
-      .getElementById("#body-container")
-      .scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
-  };
   return (
     <Nav.Link
       id={`navlink-${index}`}
-      onClick={scrollWithOffset}
+      onClick={(el) => {
+        document.getElementById("navlink-" + index).classList.remove("active");
+        document.activeElement.blur();
+        scrollWithOffset(el);
+      }}
       href={`#${route}`}
     >
       <i href={`#${route}`} className={`navbar-icon fa fa-${icons[route]}`} />{" "}
@@ -57,7 +46,6 @@ function Navbar({ theme, setTheme }) {
         </span>
       </Navb.Brand>
       <Navb.Toggle aria-controls="basic-navbar-nav" />
-      {/* <Navb.Collapse> */}
       <Nav activeKey="">
         {Object.entries(ROUTES).map(
           (item, idx) =>
@@ -71,7 +59,6 @@ function Navbar({ theme, setTheme }) {
             )
         )}
       </Nav>
-      {/* </Navb.Collapse> */}
     </Navb>
   );
 }

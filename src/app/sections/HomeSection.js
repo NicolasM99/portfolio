@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import ROUTES from "../router/routes";
 import {
   Row,
@@ -8,23 +8,28 @@ import {
   OverlayTrigger,
   Button,
 } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
+import { scrollWithOffset } from "../util/scrollWithOffset";
 const social_media = [
   {
     name: "Behance",
     icon: "behance-square",
+    link: "https://www.behance.net/nicolasmoreno99",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
+    link: "https://www.linkedin.com/in/nicolas-moreno-posada/",
   },
   {
     name: "GitHub",
     icon: "github-square",
+    link: "https://github.com/NicolasM99",
   },
   {
     name: "Instagram",
     icon: "instagram-square",
+    link: "",
   },
 ];
 
@@ -36,13 +41,25 @@ const renderTooltip = (props, label) => (
 
 function HomeSection(props) {
   return (
-    <Row id={ROUTES.HOME} className="general-section-container">
+    <Row
+      // id={ROUTES.HOME}
+      className="general-section-container"
+      style={{
+        position: "sticky",
+        width: "100%",
+        top: "0",
+        backgroundColor: "rgba(0,0,0,0.06)",
+        zIndex: "0",
+      }}
+    >
       <Col lg={4}>
         <h3 className="font-weight-normal">Un gusto verte, soy</h3>
         <h1>Nicolás Moreno</h1>
         <h3>Ingeniero en Multimedia</h3>
         <p>Realizo herramientas y productos multimedia de alta calidad</p>
-        <a href="#">Acerca de mí</a>
+        <Link onClick={scrollWithOffset} to={"#" + ROUTES.PORTFOLIO}>
+          Acerca de mí
+        </Link>
       </Col>
       <Col lg={4} className="text-center">
         <Image
@@ -58,7 +75,14 @@ function HomeSection(props) {
               overlay={(props) => renderTooltip(props, item.name)}
             >
               {({ ref, ...triggerHandler }) => (
-                <a ref={ref} {...triggerHandler} href="#" key={idx}>
+                <a
+                  ref={ref}
+                  {...triggerHandler}
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={idx}
+                >
                   <i
                     className={`fab fa-${item.icon} fa-2x social-media-icon`}
                   />

@@ -12,9 +12,8 @@
 
   .nav-link {
     padding: 16px 16px;
-    &:active {
-      color: rgba(0, 0, 0, 0.7) !important;
-      box-shadow: none !important;
+    &:focus {
+      color: initial;
     }
   }
 }

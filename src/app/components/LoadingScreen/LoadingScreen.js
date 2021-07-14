@@ -8,12 +8,11 @@ function LoadingScreen() {
         height: "100vh",
         display: "flex",
         justifyContent: "center",
-        alignContent: "center",
+        alignItems: "center",
+        flexDirection: "row",
       }}
     >
-      <Spinner animation="grow" />
-      <br />
-      <h2>Cargando...</h2>
+      <Spinner animation="grow" /> <h2>Cargando...</h2>
     </div>
   );
 }

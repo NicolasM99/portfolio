@@ -1,13 +1,15 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import AbilitiesSection from "../sections/AbilitiesSection";
 import HomeSection from "../sections/HomeSection";
 import PortfolioSection from "../sections/PortfolioSection";
 import ReferencesSection from "../sections/ReferencesSection";
 import TrajectorySection from "../sections/TrajectorySection";
-import FloatingButton from "../components/FloatingButton/FloatingButton";
+// import FloatingButton from "../components/FloatingButton/FloatingButton";
+import ROUTES from "../router/routes.json";
+
 function HomePage() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   return (
     <div
       data-bs-spy="scroll"
@@ -21,7 +23,8 @@ function HomePage() {
         height: "100vh",
       }}
     >
-      <FloatingButton />
+      {/* <FloatingButton /> */}
+      <div id={ROUTES.HOME} style={{ height: "1" }}></div>
       <HomeSection />
       <PortfolioSection />
       <AbilitiesSection />
