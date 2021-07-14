@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { scrollWithOffset } from "../../util/scrollWithOffset";
 import ROUTES from "../../router/routes";
 
-var lastScroll = 0;
 function GoBackTopBtn({ scrolling }) {
   return (
     <a

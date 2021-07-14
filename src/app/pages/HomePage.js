@@ -32,6 +32,7 @@ function HomePage({ setScrolling, scrolling }) {
       document
         .getElementById("#body-container")
         .removeEventListener("scroll", handleScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div
