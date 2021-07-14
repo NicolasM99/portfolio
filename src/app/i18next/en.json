@@ -1,5 +1,10 @@
 {
   "general.go.back": "Go back",
+  "general.home.title": "Home",
+  "general.portfolio.title": "Portfolio",
+  "general.abilities.title": "Abilities",
+  "general.trajectory.title": "Trajectory",
+  "general.references.title": "References",
   "home.title": "Home",
   "error404.title": "Error 404 :(",
   "error404.description": "Sorry, we couldn't find this page."

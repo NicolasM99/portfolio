@@ -24,7 +24,7 @@ function HomePage() {
       }}
     >
       {/* <FloatingButton /> */}
-      <div id={ROUTES.HOME} style={{ height: "1" }}></div>
+      <div id={ROUTES.HOME} style={{ height: "0" }}></div>
       <HomeSection />
       <PortfolioSection />
       <AbilitiesSection />
