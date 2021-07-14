@@ -1,0 +1,17 @@
+.go-top-not-scrolling {
+  transition: 0.15s ease-in-out;
+  right: 10px;
+}
+
+.go-top-scrolling {
+  right: -80px;
+
+  transition: 0.15s ease-in-out;
+}
+
+.go-top {
+  position: fixed;
+  bottom: 100px;
+  //   right: 10px;
+  z-index: 999;
+}

@@ -10,9 +10,10 @@
   transition: 0.2s;
   cursor: pointer;
   text-align: center;
-  width: 35px;
+  width: 45px;
+  padding: 10px 0;
+  background-color: white;
   align-content: center;
-  border-radius: 500px;
   &:active {
     background-color: rgba(0, 0, 0, 0.1);
     transition: 0.2s;

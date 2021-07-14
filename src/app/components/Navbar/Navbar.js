@@ -42,7 +42,7 @@ const RenderNavHashLink = ({ current, setCurrent, route, label, index }) => {
   );
 };
 
-function Navbar({ theme, setTheme }) {
+function Navbar({ theme, setTheme, scrolling }) {
   const { width, sizeRef } = useWindowDimensions();
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState("es");
@@ -52,7 +52,11 @@ function Navbar({ theme, setTheme }) {
   };
   const [current, setCurrent] = useState(0);
   return (
-    <Navb id="custom-navbar" fixed={width >= sizeRef.lg ? "top" : "bottom"}>
+    <Navb
+      className={scrolling && "scrolling"}
+      id="custom-navbar"
+      fixed={width >= sizeRef.lg ? "top" : "bottom"}
+    >
       <Navb.Brand>
         <Tooltip
           label={t("general.change.language")}

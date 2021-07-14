@@ -12,9 +12,21 @@
   }
 }
 
+.scrolling {
+  @media (min-width: $lg) {
+    top: -80px;
+  }
+  @media (max-width: $max-lg) {
+    bottom: -80px;
+  }
+
+  transition: 0.15s ease-in-out;
+}
+
 #custom-navbar {
+  transition: 0.15s ease-in-out;
   background-color: white;
-  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.2);
   padding: 0 10px;
   .navbar-brand {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -24,10 +36,17 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
-    background-color: white;
+    // background-color: white;
     border-radius: 500px;
     font-size: 12px;
     margin-left: 10px;
+    // padding: 0 10px;
+    :nth-of-type(1) {
+      border-radius: 500px 0 0 500px;
+    }
+    :nth-of-type(2) {
+      border-radius: 0 500px 500px 0;
+    }
   }
   .navlink-label {
     display: none;

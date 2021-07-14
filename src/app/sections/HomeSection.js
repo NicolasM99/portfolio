@@ -68,7 +68,11 @@ function HomeSection(props) {
           <h1>{t("general.nicolas.moreno")}</h1>
           <h4>{t("general.multimedia.engineer")}</h4>
           <p>{t("home.description")}</p>
-          <Link onClick={scrollWithOffset} to={"#" + ROUTES.PORTFOLIO}>
+          <Link
+            className="p-4"
+            onClick={scrollWithOffset}
+            to={"#" + ROUTES.PORTFOLIO}
+          >
             <i className="fa fa-chevron-down animate-up-and-down mr-2" />{" "}
             {t("home.about.me")}
           </Link>
