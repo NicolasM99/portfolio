@@ -65,6 +65,7 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
   useEffect(() => {
     i18n.changeLanguage(language === "es" ? "es" : "en");
     localStorage.setItem("language", language);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
   return (
     <Navb
