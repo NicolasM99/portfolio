@@ -50,7 +50,7 @@ const RenderNavHashLink = ({
   );
 };
 
-function Navbar({ theme, setTheme, scrolling, canHide, setCanHide }) {
+function Navbar({ theme, setTheme, scrolling, setCanHide }) {
   const { width, sizeRef } = useWindowDimensions();
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState("es");
@@ -66,6 +66,7 @@ function Navbar({ theme, setTheme, scrolling, canHide, setCanHide }) {
       fixed={width >= sizeRef.lg ? "top" : "bottom"}
     >
       <Navb.Brand>
+        {/* //TODO: Save Language and theme preferences in localStorage */}
         <Tooltip
           label={t("general.change.language")}
           render={(ref, triggerHandler) => (

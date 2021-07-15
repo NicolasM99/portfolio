@@ -8,7 +8,6 @@ import TrajectorySection from "../sections/TrajectorySection";
 // import FloatingButton from "../components/FloatingButton/FloatingButton";
 import ROUTES from "../router/routes.json";
 import GoBackTopBtn from "../components/GoBackTopBtn/GoBackTopBtn";
-import { useWindowDimensions } from "../util/useWindowDimensions";
 var lastScroll = 0;
 var canHideRef;
 function HomePage({ setScrolling, scrolling, canHide, setCanHide }) {

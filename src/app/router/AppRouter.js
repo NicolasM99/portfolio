@@ -19,7 +19,6 @@ function AppRouter(props) {
       <div className={theme}>
         <Navbar
           scrolling={scrolling}
-          canHide={canHide}
           setCanHide={setCanHide}
           theme={theme}
           setTheme={setTheme}
