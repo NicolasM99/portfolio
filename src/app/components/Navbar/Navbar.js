@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar as Navb, Nav } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import ROUTES from "../../router/routes.json";
@@ -53,12 +53,19 @@ const RenderNavHashLink = ({
 function Navbar({ theme, setTheme, scrolling, setCanHide }) {
   const { width, sizeRef } = useWindowDimensions();
   const { t, i18n } = useTranslation();
-  const [language, setLanguage] = useState("es");
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || "es"
+  );
   const changeLanguage = () => {
-    i18n.changeLanguage(language === "es" ? "en" : "es");
+    // i18n.changeLanguage(language === "es" ? "en" : "es");
+    // localStorage.setItem("language", language);
     setLanguage(language === "es" ? "en" : "es");
   };
   const [current, setCurrent] = useState(0);
+  useEffect(() => {
+    i18n.changeLanguage(language === "es" ? "es" : "en");
+    localStorage.setItem("language", language);
+  }, [language]);
   return (
     <Navb
       className={scrolling && "scrolling"}
@@ -89,11 +96,7 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="btn-opt"
             >
-              <i
-                className={`theme-icon fa fa-${
-                  theme === "light" ? "moon" : "lightbulb"
-                }`}
-              />
+              <i className={`theme-icon fa fa-adjust`} />
             </span>
           )}
         />

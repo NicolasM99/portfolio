@@ -1,0 +1,9 @@
+a {
+  color: var(--primary);
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: var(--primary-dark);
+  transition: 0.2s;
+}

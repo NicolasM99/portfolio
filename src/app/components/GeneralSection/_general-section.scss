@@ -6,19 +6,5 @@
   position: relative;
   margin: 0;
   background-color: var(--bg-primary);
-  h2,
-  h4 {
-    color: var(--text-dark);
-  }
-  h1,
-  h3 {
-    color: var(--primary);
-  }
-  p {
-    color: var(--text-light);
-  }
-  a {
-    color: var(--primary);
-  }
   transition: 0.4s;
 }

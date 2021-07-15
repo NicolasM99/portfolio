@@ -13,3 +13,11 @@ h6,
   font-family: "Poppins";
   font-weight: bold;
 }
+h1,
+h3 {
+  color: var(--primary);
+}
+h2,
+h4 {
+  color: var(--text-dark);
+}

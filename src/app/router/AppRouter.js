@@ -8,12 +8,12 @@ const HomePage = lazy(() => import("../pages/HomePage"));
 const Error404Page = lazy(() => import("../pages/Error404Page"));
 
 function AppRouter(props) {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [scrolling, setScrolling] = useState(false);
   const [canHide, setCanHide] = useState(true);
   useEffect(() => {
-    console.log("Can hide state", canHide);
-  }, [canHide]);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
   return (
     <Suspense fallback={<LoadingScreen />}>
       <div className={theme}>
