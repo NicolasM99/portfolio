@@ -101,4 +101,29 @@
       justify-content: space-between;
     }
   }
+
+  .btn-opt {
+    transition: 0.2s;
+    cursor: pointer;
+    text-align: center;
+    width: 45px;
+    padding: 10px 0;
+    background-color: var(--bg-primary);
+    align-content: center;
+    &:active {
+      background-color: var(--bg-secondary);
+      transition: 0.2s;
+    }
+  }
+
+  .navbar-brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    .language {
+      color: var(--text-dark);
+    }
+  }
 }

@@ -2,68 +2,45 @@
 
 button {
   outline: none !important;
-}
 
-.btn {
-  min-width: 100px;
-  max-width: 180px;
-}
-/* NAVBAR */
-
-.btn-opt {
-  transition: 0.2s;
-  cursor: pointer;
-  text-align: center;
-  width: 45px;
-  padding: 10px 0;
-  background-color: var(--bg-primary);
-  align-content: center;
-  &:active {
-    background-color: var(--bg-secondary);
-    transition: 0.2s;
+  &.btn {
+    min-width: 100px;
+    max-width: 180px;
   }
-}
 
-.btn-primary {
-  background-color: var(--primary);
-  color: var(--btn-label);
-  font-weight: bold;
-  border-color: var(--primary) !important;
-  &:hover,
-  &:focus {
-    color: var(--btn-label) !important;
-    border-color: var(--primary-dark) !important;
-    background-color: var(--primary-dark) !important;
-  }
-  &:active {
-    color: var(--btn-label) !important;
-    border-color: var(--primary-darker) !important;
-    background-color: var(--primary-darker) !important;
-  }
-}
-
-.btn-outline-primary {
-  background-color: var(--bg-primary);
-  color: var(--primary);
-  font-weight: bold;
-  border-color: var(--primary);
-  &:hover,
-  &:focus {
-    color: var(--btn-label) !important;
-    border-color: var(--primary) !important;
+  &.btn-primary {
     background-color: var(--primary) !important;
-  }
-  &:active {
     color: var(--btn-label) !important;
-    border-color: var(--primary-darker) !important;
-    background-color: var(--primary-darker) !important;
+    font-weight: bold;
+    border-color: var(--primary) !important;
+    &:hover,
+    &:focus {
+      color: var(--btn-label) !important;
+      border-color: var(--primary-dark) !important;
+      background-color: var(--primary-dark) !important;
+    }
+    &:active {
+      color: var(--btn-label) !important;
+      border-color: var(--primary-darker) !important;
+      background-color: var(--primary-darker) !important;
+    }
   }
-}
 
-.navbar-brand {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+  &.btn-outline-primary {
+    background-color: var(--bg-primary);
+    color: var(--primary);
+    font-weight: bold;
+    border-color: var(--primary);
+    &:hover,
+    &:focus {
+      color: var(--btn-label) !important;
+      border-color: var(--primary) !important;
+      background-color: var(--primary) !important;
+    }
+    &:active {
+      color: var(--btn-label) !important;
+      border-color: var(--primary-darker) !important;
+      background-color: var(--primary-darker) !important;
+    }
+  }
 }

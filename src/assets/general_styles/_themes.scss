@@ -19,18 +19,18 @@
 }
 
 .light {
-  --primary: hsl(271, 100%, 50%);
-  --primary-light: hsl(271, 100%, 70%);
-  --primary-dark: hsl(271, 100%, 40%);
-  --primary-darker: hsl(271, 100%, 30%);
-  --secondary: hsl(202, 86%, 51%);
+  --primary: hsl(214, 100%, 60%);
+  --primary-light: hsl(214, 100%, 70%);
+  --primary-dark: hsl(214, 100%, 40%);
+  --primary-darker: hsl(214, 100%, 30%);
+  --secondary: hsl(271, 86%, 51%);
   --light-gray: hsl(0, 0%, 91%);
   --gray: hsl(0, 0%, 69%);
   --dark-gray: hsl(0, 0%, 25%);
   --bg-primary: hsl(0, 0%, 100%);
   --bg-secondary: hsl(0, 0%, 96%);
   --text-dark: rgba(0, 0, 0, 0.7);
-  --text-light: rgba(0, 0, 0, 0.55);
+  --text-light: rgba(0, 0, 0, 0.4);
   --shadow: rgba(0, 0, 0, 0.2);
   --btn-label: var(--bg-primary);
   transition: 0.4s;

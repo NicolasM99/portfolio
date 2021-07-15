@@ -1,11 +1,11 @@
-.general-section-container {
-  min-height: calc(100vh - 70px);
+footer {
+  height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   margin: 0;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
+  flex-direction: column;
   transition: 0.4s;
-  padding-top: 70px;
 }

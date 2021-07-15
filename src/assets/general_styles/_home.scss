@@ -3,10 +3,15 @@
   @media (max-width: $max-lg) {
     padding: 85px 0;
     text-align: center;
+    .col-lg-4 {
+      padding: 1rem 1rem;
+    }
   }
   @media (max-width: $max-sm) {
     padding-top: 0;
     padding-bottom: 85px;
+  }
+  #bio {
   }
 }
 

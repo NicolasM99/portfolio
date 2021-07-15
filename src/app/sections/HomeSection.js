@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 import ROUTES from "../router/routes";
-import {
-  Row,
-  Col,
-  Image,
-  // Tooltip,
-  // OverlayTrigger,
-  Button,
-  Modal,
-} from "react-bootstrap";
+import { Row, Col, Image, Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { scrollWithOffset } from "../util/scrollWithOffset";
 import { useTranslation } from "react-i18next";
@@ -53,7 +45,6 @@ function HomeSection({ setCanHide }) {
   return (
     <>
       <Row
-        // id={ROUTES.HOME}
         className="general-section-container home"
         style={{
           position: "sticky",
@@ -62,7 +53,7 @@ function HomeSection({ setCanHide }) {
           zIndex: "0",
         }}
       >
-        <Col lg={4}>
+        <Col lg={4} id="bio">
           <h4 className="font-weight-normal">{t("home.greetings")}</h4>
           <h1>{t("general.nicolas.moreno")}</h1>
           <h4>{t("general.multimedia.engineer")}</h4>

@@ -57,8 +57,6 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
     localStorage.getItem("language") || "es"
   );
   const changeLanguage = () => {
-    // i18n.changeLanguage(language === "es" ? "en" : "es");
-    // localStorage.setItem("language", language);
     setLanguage(language === "es" ? "en" : "es");
   };
   const [current, setCurrent] = useState(0);
@@ -74,14 +72,13 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
       fixed={width >= sizeRef.lg ? "top" : "bottom"}
     >
       <Navb.Brand>
-        {/* //TODO: Save Language and theme preferences in localStorage */}
         <Tooltip
           label={t("general.change.language")}
           render={(ref, triggerHandler) => (
             <span
               ref={ref}
               {...triggerHandler}
-              className="btn-opt"
+              className="btn-opt language"
               onClick={() => changeLanguage()}
             >
               {language === "es" ? "EN" : "ES"}

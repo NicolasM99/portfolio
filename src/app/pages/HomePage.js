@@ -8,6 +8,7 @@ import TrajectorySection from "../sections/TrajectorySection";
 // import FloatingButton from "../components/FloatingButton/FloatingButton";
 import ROUTES from "../router/routes.json";
 import GoBackTopBtn from "../components/GoBackTopBtn/GoBackTopBtn";
+import Footer from "../sections/Footer";
 var lastScroll = 0;
 var canHideRef;
 function HomePage({ setScrolling, scrolling, canHide, setCanHide }) {
@@ -75,6 +76,7 @@ function HomePage({ setScrolling, scrolling, canHide, setCanHide }) {
       <AbilitiesSection />
       <TrajectorySection />
       <ReferencesSection />
+      <Footer />
     </div>
   );
 }
