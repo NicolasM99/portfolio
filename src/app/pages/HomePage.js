@@ -16,7 +16,7 @@ function HomePage({ setScrolling, scrolling, canHide }) {
       setTimeout(() => {
         const currentScroll =
           document.getElementById("#body-container").scrollTop;
-        if (currentScroll > lastScroll + 100) {
+        if (currentScroll > lastScroll + 500) {
           setScrolling(true);
         } else if (currentScroll < lastScroll) {
           setScrolling(false);
