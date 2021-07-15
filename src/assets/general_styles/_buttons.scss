@@ -12,12 +12,35 @@
   text-align: center;
   width: 45px;
   padding: 10px 0;
-  background-color: white;
+  background-color: var(--bg-primary);
   align-content: center;
   &:active {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-secondary);
     transition: 0.2s;
   }
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--btn-label);
+  font-weight: bold;
+  outline-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  &:hover,
+  &:focus {
+    background-color: var(--primary-dark) !important;
+  }
+  &:active {
+    background-color: var(--primary-darker) !important;
+  }
+}
+
+.btn-outline-primary {
+  background-color: var(--bg-primary);
+  color: var(--primary);
+  font-weight: bold;
+  outline-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .navbar-brand {

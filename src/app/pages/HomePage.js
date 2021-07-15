@@ -8,15 +8,16 @@ import TrajectorySection from "../sections/TrajectorySection";
 // import FloatingButton from "../components/FloatingButton/FloatingButton";
 import ROUTES from "../router/routes.json";
 import GoBackTopBtn from "../components/GoBackTopBtn/GoBackTopBtn";
+import { useWindowDimensions } from "../util/useWindowDimensions";
 var lastScroll = 0;
 var canHideRef;
-function HomePage({ setScrolling, scrolling, canHide }) {
+function HomePage({ setScrolling, scrolling, canHide, setCanHide }) {
   const handleScroll = () => {
     if (canHideRef) {
       setTimeout(() => {
         const currentScroll =
           document.getElementById("#body-container").scrollTop;
-        if (currentScroll > lastScroll + 500) {
+        if (currentScroll > lastScroll + 200) {
           setScrolling(true);
         } else if (currentScroll < lastScroll) {
           setScrolling(false);
@@ -25,18 +26,33 @@ function HomePage({ setScrolling, scrolling, canHide }) {
       }, 200);
     }
   };
+
+  const handleMouseMove = (e) => {
+    if (e.clientY <= 100 && window.innerWidth >= 992) {
+      setScrolling(false);
+    } else if (
+      e.clientY >= window.innerHeight - 80 &&
+      window.innerWidth < 992
+    ) {
+      setScrolling(false);
+    }
+  };
+
   useEffect(() => {
     canHideRef = canHide;
   }, [canHide]);
 
   useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
     document
       .getElementById("#body-container")
       .addEventListener("scroll", handleScroll);
-    return () =>
+    return () => {
       document
         .getElementById("#body-container")
         .removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -53,9 +69,9 @@ function HomePage({ setScrolling, scrolling, canHide }) {
       }}
     >
       {/* <FloatingButton /> */}
-      <GoBackTopBtn scrolling={scrolling} />
+      <GoBackTopBtn setCanHide={setCanHide} scrolling={scrolling} />
       <div id={ROUTES.HOME} style={{ height: "0" }}></div>
-      <HomeSection />
+      <HomeSection setCanHide={setCanHide} />
       <PortfolioSection />
       <AbilitiesSection />
       <TrajectorySection />

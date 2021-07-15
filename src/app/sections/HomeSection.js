@@ -44,7 +44,7 @@ export const renderTooltip = (props, label) => (
   </Tooltip>
 );
 
-function HomeSection(props) {
+function HomeSection({ setCanHide }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -59,7 +59,6 @@ function HomeSection(props) {
           position: "sticky",
           width: "100%",
           top: "0",
-          backgroundColor: "rgba(0,0,0,0.06)",
           zIndex: "0",
         }}
       >
@@ -70,7 +69,7 @@ function HomeSection(props) {
           <p>{t("home.description")}</p>
           <Link
             className="py-4"
-            onClick={scrollWithOffset}
+            onClick={(el) => scrollWithOffset(el, setCanHide)}
             to={"#" + ROUTES.PORTFOLIO}
           >
             <i className="fa fa-chevron-down animate-up-and-down mr-2" />{" "}

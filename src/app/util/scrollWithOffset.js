@@ -11,5 +11,5 @@ export const scrollWithOffset = (el, setCanHide) => {
     .scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   setTimeout(() => {
     setCanHide(true);
-  }, 2000);
+  }, 1000);
 };

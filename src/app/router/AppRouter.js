@@ -8,7 +8,7 @@ const HomePage = lazy(() => import("../pages/HomePage"));
 const Error404Page = lazy(() => import("../pages/Error404Page"));
 
 function AppRouter(props) {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const [scrolling, setScrolling] = useState(false);
   const [canHide, setCanHide] = useState(true);
   useEffect(() => {

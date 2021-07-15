@@ -9,7 +9,7 @@ function GeneralSection({ header, Content, _id }) {
           position: "absolute",
           height: "100vh",
           width: "100%",
-          backgroundColor: "white",
+          // backgroundColor: "white",
         }}
       ></div>
       <Row className="col-lg-8">

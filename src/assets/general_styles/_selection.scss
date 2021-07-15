@@ -1,0 +1,8 @@
+::selection {
+  background: var(--primary); /* WebKit/Blink Browsers */
+  color: white;
+}
+::-moz-selection {
+  background: var(--primary); /* Gecko Browsers */
+  color: white;
+}

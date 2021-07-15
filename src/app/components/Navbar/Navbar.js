@@ -89,7 +89,9 @@ function Navbar({ theme, setTheme, scrolling, canHide, setCanHide }) {
               className="btn-opt"
             >
               <i
-                className={`fa fa-${theme === "light" ? "lightbulb" : "moon"}`}
+                className={`theme-icon fa fa-${
+                  theme === "light" ? "moon" : "lightbulb"
+                }`}
               />
             </span>
           )}

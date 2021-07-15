@@ -1,6 +1,6 @@
 .go-top-not-scrolling {
   transition: 0.15s ease-in-out;
-  right: 10px;
+  right: 20px;
 }
 
 .go-top-scrolling {
@@ -10,8 +10,16 @@
 }
 
 .go-top {
+  color: var(--primary);
   position: fixed;
   bottom: 100px;
   //   right: 10px;
   z-index: 999;
+  &:hover,
+  &:focus {
+    color: var(--primary-dark) !important;
+  }
+  &:active {
+    color: var(--primary-darker) !important;
+  }
 }

@@ -1,7 +1,24 @@
-/*COLORS*/
-$light-primary: #8400ff;
+/*===== GENERAL COLORS (LIGHT DEFAULT) =====*/
 
-/*SIZES*/
+/*LIGHT*/
+$hue-primary-light: 271;
+$hue-secondary-light: 202;
+$hue-light-gray-light: 0;
+$hue-gray-light: 0;
+$hue-dark-gray-light: 0;
+$hue-bg-primary-light: 0;
+$hue-bg-secondary-light: 0;
+
+/*DARK*/
+$hue-primary-dark: 36;
+$hue-secondary-dark: 54;
+$hue-light-gray-dark: 0;
+$hue-gray-dark: 0;
+$hue-dark-gray-dark: 0;
+$hue-bg-primary-dark: 234;
+$hue-bg-secondary-dark: 234;
+
+/*===== SIZES =====*/
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
