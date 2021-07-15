@@ -69,7 +69,7 @@ function HomeSection(props) {
           <h4>{t("general.multimedia.engineer")}</h4>
           <p>{t("home.description")}</p>
           <Link
-            className="p-4"
+            className="py-4"
             onClick={scrollWithOffset}
             to={"#" + ROUTES.PORTFOLIO}
           >

@@ -9,7 +9,14 @@ const icons = JSON.parse(
   `{"${ROUTES.HOME}": "house-user","${ROUTES.PORTFOLIO}": "briefcase","${ROUTES.ABILITIES}": "tools","${ROUTES.TRAJECTORY}": "globe-americas","${ROUTES.REFERENCES}": "id-card"}`
 );
 
-const RenderNavHashLink = ({ current, setCurrent, route, label, index }) => {
+const RenderNavHashLink = ({
+  current,
+  setCurrent,
+  route,
+  label,
+  index,
+  setCanHide,
+}) => {
   return (
     <Tooltip
       label={label}
@@ -19,6 +26,7 @@ const RenderNavHashLink = ({ current, setCurrent, route, label, index }) => {
           {...triggerHandler}
           id={`navlink-${index}`}
           onClick={(el) => {
+            setCanHide(false);
             if (current !== index) {
               document
                 .getElementById("navlink-" + index)
@@ -26,7 +34,7 @@ const RenderNavHashLink = ({ current, setCurrent, route, label, index }) => {
             }
             setCurrent(index);
             document.activeElement.blur();
-            scrollWithOffset(el);
+            scrollWithOffset(el, setCanHide);
           }}
           href={`#${route}`}
         >
@@ -42,7 +50,7 @@ const RenderNavHashLink = ({ current, setCurrent, route, label, index }) => {
   );
 };
 
-function Navbar({ theme, setTheme, scrolling }) {
+function Navbar({ theme, setTheme, scrolling, canHide, setCanHide }) {
   const { width, sizeRef } = useWindowDimensions();
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState("es");
@@ -94,6 +102,7 @@ function Navbar({ theme, setTheme, scrolling }) {
             item[0] !== "ERROR_404_NOT_FOUND" && (
               <RenderNavHashLink
                 current={current}
+                setCanHide={setCanHide}
                 setCurrent={setCurrent}
                 key={idx}
                 route={item[1]}

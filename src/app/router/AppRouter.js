@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 import Navbar from "../components/Navbar/Navbar";
@@ -10,10 +10,20 @@ const Error404Page = lazy(() => import("../pages/Error404Page"));
 function AppRouter(props) {
   const [theme, setTheme] = useState("dark");
   const [scrolling, setScrolling] = useState(false);
+  const [canHide, setCanHide] = useState(true);
+  useEffect(() => {
+    console.log("Can hide state", canHide);
+  }, [canHide]);
   return (
     <Suspense fallback={<LoadingScreen />}>
       <div className={theme}>
-        <Navbar scrolling={scrolling} theme={theme} setTheme={setTheme} />
+        <Navbar
+          scrolling={scrolling}
+          canHide={canHide}
+          setCanHide={setCanHide}
+          theme={theme}
+          setTheme={setTheme}
+        />
         <Switch>
           <Route
             path={"/" + ROUTES.ERROR_404_NOT_FOUND}
@@ -21,9 +31,14 @@ function AppRouter(props) {
           />
           <Route
             path="/"
-            component={HomePage}
+            // component={HomePage}
             children={() => (
-              <HomePage scrolling={scrolling} setScrolling={setScrolling} />
+              <HomePage
+                scrolling={scrolling}
+                canHide={canHide}
+                setCanHide={setCanHide}
+                setScrolling={setScrolling}
+              />
             )}
             exact
           />

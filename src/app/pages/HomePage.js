@@ -9,20 +9,25 @@ import TrajectorySection from "../sections/TrajectorySection";
 import ROUTES from "../router/routes.json";
 import GoBackTopBtn from "../components/GoBackTopBtn/GoBackTopBtn";
 var lastScroll = 0;
-function HomePage({ setScrolling, scrolling }) {
+var canHideRef;
+function HomePage({ setScrolling, scrolling, canHide }) {
   const handleScroll = () => {
-    setTimeout(() => {
-      const currentScroll =
-        document.getElementById("#body-container").scrollTop;
-      if (currentScroll > lastScroll) {
-        setScrolling(true);
-      } else if (currentScroll < lastScroll) {
-        setScrolling(false);
-      }
-      console.log(lastScroll, currentScroll);
-      lastScroll = currentScroll;
-    }, 200);
+    if (canHideRef) {
+      setTimeout(() => {
+        const currentScroll =
+          document.getElementById("#body-container").scrollTop;
+        if (currentScroll > lastScroll + 100) {
+          setScrolling(true);
+        } else if (currentScroll < lastScroll) {
+          setScrolling(false);
+        }
+        lastScroll = currentScroll;
+      }, 200);
+    }
   };
+  useEffect(() => {
+    canHideRef = canHide;
+  }, [canHide]);
 
   useEffect(() => {
     document

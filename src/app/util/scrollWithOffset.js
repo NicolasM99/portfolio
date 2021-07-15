@@ -1,4 +1,4 @@
-export const scrollWithOffset = (el) => {
+export const scrollWithOffset = (el, setCanHide) => {
   el.preventDefault();
   const _href = el.target.parentElement.href || el.target.href;
   const elementId = _href.substring(_href.indexOf("#") + 1, _href.length);
@@ -9,4 +9,7 @@ export const scrollWithOffset = (el) => {
   document
     .getElementById("#body-container")
     .scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+  setTimeout(() => {
+    setCanHide(true);
+  }, 800);
 };
