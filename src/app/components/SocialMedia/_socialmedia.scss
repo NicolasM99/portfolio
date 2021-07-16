@@ -1,0 +1,15 @@
+.social-media-icon-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 1rem (15 + 100%/12);
+  a {
+    transition: 0.2s;
+  }
+  a:hover {
+    transform: scale(1.4) !important;
+  }
+}
+.social-media-icon {
+  text-align: center;
+}

@@ -1,11 +1,16 @@
 .general-section-container {
   min-height: calc(100vh - 70px);
   display: flex;
-  align-items: center;
+  @media (min-width: $lg) {
+    align-items: center;
+  }
+  @media (max-width: $max-lg) {
+    align-items: flex-start;
+    padding-top: 70px;
+  }
   justify-content: center;
   position: relative;
   margin: 0;
   background-color: var(--bg-primary);
   transition: 0.4s;
-  padding-top: 70px;
 }
