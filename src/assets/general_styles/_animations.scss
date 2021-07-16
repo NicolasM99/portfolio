@@ -1,0 +1,13 @@
+@keyframes up_and_down {
+  0%,
+  100% {
+    transform: translate(0, 5px);
+  }
+  50% {
+    transform: translate(0);
+  }
+}
+
+.animate-up-and-down {
+  animation: up_and_down 1s infinite ease-in-out;
+}

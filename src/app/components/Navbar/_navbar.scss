@@ -90,7 +90,8 @@
     flex-direction: row;
     height: 70px;
     .navbar-brand {
-      left: 0;
+      transition: 0.2s;
+      left: 10px;
       position: absolute;
       bottom: 80px;
       filter: drop-shadow(0px 3px 4px var(--shadow));
