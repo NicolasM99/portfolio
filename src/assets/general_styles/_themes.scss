@@ -1,29 +1,9 @@
-.config {
-  /*LIGHT*/
-  // $hue-primary-light: 271;
-  --hue-secondary-light: 202;
-  --hue-light-gray-light: 0;
-  --hue-gray-light: 0;
-  --hue-dark-gray-light: 0;
-  --hue-bg-primary-light: 0;
-  --hue-bg-secondary-light: 0;
-
-  /*DARK*/
-  --hue-primary-dark: 36;
-  --hue-secondary-dark: 54;
-  --hue-light-gray-dark: 0;
-  --hue-gray-dark: 0;
-  --hue-dark-gray-dark: 0;
-  --hue-bg-primary-dark: 234;
-  --hue-bg-secondary-dark: 234;
-}
-
 .light {
-  --primary: hsl(214, 100%, 60%);
-  --primary-light: hsl(214, 100%, 70%);
-  --primary-dark: hsl(214, 100%, 40%);
-  --primary-darker: hsl(214, 100%, 30%);
-  --secondary: hsl(271, 86%, 51%);
+  --primary: hsl(#{$hue-primary-light}, 100%, 60%);
+  --primary-light: hsl(#{$hue-primary-light}, 100%, 70%);
+  --primary-dark: hsl(#{$hue-primary-light}, 100%, 40%);
+  --primary-darker: hsl(#{$hue-primary-light}, 100%, 30%);
+  --secondary: hsl(#{$hue-secondary-light}, 86%, 51%);
   --light-gray: hsl(0, 0%, 91%);
   --gray: hsl(0, 0%, 69%);
   --dark-gray: hsl(0, 0%, 25%);
@@ -36,16 +16,16 @@
   transition: 0.4s;
 }
 .dark {
-  --primary: hsl(36, 100%, 50%);
-  --primary-light: hsl(36, 100%, 70%);
-  --primary-dark: hsl(36, 100%, 40%);
-  --primary-darker: hsl(36, 100%, 30%);
-  --secondary: hsl(54, 100%, 50%);
+  --primary: hsl(#{$hue-primary-dark}, 100%, 60%);
+  --primary-light: hsl(#{$hue-primary-dark}, 100%, 70%);
+  --primary-dark: hsl(#{$hue-primary-dark}, 100%, 40%);
+  --primary-darker: hsl(#{$hue-primary-dark}, 100%, 30%);
+  --secondary: hsl(#{$hue-secondary-dark}, 100%, 50%);
   --light-gray: hsl(0, 0%, 80%);
   --gray: hsl(0, 0%, 52%);
   --dark-gray: hsl(0, 0%, 8%);
-  --bg-primary: hsl(234, 26%, 14%);
-  --bg-secondary: hsl(236, 28%, 10%);
+  --bg-primary: hsl(#{$hue-bg-primary-dark}, 26%, 14%);
+  --bg-secondary: hsl(#{$hue-bg-secondary-dark}, 28%, 10%);
   --text-dark: rgba(255, 255, 255, 0.7);
   --text-light: rgba(255, 255, 255, 0.55);
   --shadow: rgba(0, 0, 0, 0.5);
