@@ -65,6 +65,8 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
     localStorage.setItem("language", language);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
+
+  //TODO: FIX NAVBAR HIDING FOR MOBILE
   return (
     <Navb
       className={scrolling && "scrolling"}
