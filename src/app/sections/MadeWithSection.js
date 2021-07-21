@@ -6,13 +6,11 @@ const tools = ["React JS", "Bootstrap", "Firebase Hosting", "Github"];
 const Content = (t) => (
   <div>
     <h3>{t("made.with.title")}...</h3>
-    <p>
-      <ul>
-        {tools.map((tool) => (
-          <li>{tool}</li>
-        ))}
-      </ul>
-    </p>{" "}
+    <ul>
+      {tools.map((tool, idx) => (
+        <li key={idx}>{tool}</li>
+      ))}
+    </ul>{" "}
     <a
       href="https://github.com/NicolasM99/portfolio"
       target="_blank"
