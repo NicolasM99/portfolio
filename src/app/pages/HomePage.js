@@ -17,21 +17,21 @@ var lastScroll = 0;
 var canHideRef;
 function HomePage({ setScrolling, scrolling, canHide, setCanHide }) {
   const { height } = useWindowDimensions();
-  const [showCircle, setShowCircle] = useState(true);
+  const [showCircle, setShowCircle] = useState(false);
+  //TODO: Fix height of home for mobile and improve parallax
   const handleScroll = () => {
     const bodyContainer = document.getElementById("body-container");
-    document.getElementById("home_section").style.top = `${
-      -0.3 * bodyContainer.scrollTop
-    }px`;
-
-    if (bodyContainer.scrollTop < height - 70) {
-      setShowCircle(true);
-      document.getElementById("expanded-circle").style.transform = `scale(${
-        bodyContainer.scrollTop / height + 1
-      })`;
-    } else {
-      setShowCircle(false);
-    }
+    // if (bodyContainer.scrollTop < height - 80) {
+    //   document.getElementById("home_section").style.top = `${
+    //     -0.3 * bodyContainer.scrollTop
+    //   }px`;
+    //   setShowCircle(true);
+    //   document.getElementById("expanded-circle").style.transform = `scale(${
+    //     bodyContainer.scrollTop / height + 1
+    //   })`;
+    // } else {
+    //   setShowCircle(false);
+    // }
 
     if (canHideRef) {
       setTimeout(() => {

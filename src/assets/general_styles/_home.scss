@@ -38,6 +38,7 @@
 }
 
 #expanded-circle {
+  opacity: 0.2;
   transition: none !important;
   background-color: var(--primary);
   --diameter: 95vw;
