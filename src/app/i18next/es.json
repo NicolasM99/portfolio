@@ -15,5 +15,7 @@
   "home.about.me": "Acerca de mí",
   "home.contact": "Contáctame",
   "error404.title": "Error 404 :(",
-  "error404.description": "Lo sentimos, no encontramos esta página"
+  "error404.description": "Lo sentimos, no encontramos esta página",
+  "made.with.title": "Realizado con",
+  "made.with.see.repo": "Ver repositorio"
 }

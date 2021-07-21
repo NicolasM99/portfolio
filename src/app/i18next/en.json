@@ -15,5 +15,7 @@
   "home.about.me": "About me",
   "home.contact": "Contact me",
   "error404.title": "Error 404 :(",
-  "error404.description": "Sorry, we couldn't find this page."
+  "error404.description": "Sorry, we couldn't find this page.",
+  "made.with.title": "Made with",
+  "made.with.see.repo": "See repo"
 }

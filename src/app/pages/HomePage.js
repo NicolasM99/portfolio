@@ -4,6 +4,7 @@ import ROUTES from "../router/routes.json";
 import GoBackTopBtn from "../components/GoBackTopBtn/GoBackTopBtn";
 import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 import { useWindowDimensions } from "../util/useWindowDimensions";
+import MadeWithSection from "../sections/MadeWithSection";
 const HomeSection = lazy(() => import("../sections/HomeSection"));
 const PortfolioSection = lazy(() => import("../sections/PortfolioSection"));
 const ReferencesSection = lazy(() => import("../sections/ReferencesSection"));
@@ -97,6 +98,7 @@ function HomePage({ setScrolling, scrolling, canHide, setCanHide }) {
         <AbilitiesSection />
         <TrajectorySection />
         <ReferencesSection />
+        <MadeWithSection />
         <Footer />
       </div>
     </Suspense>

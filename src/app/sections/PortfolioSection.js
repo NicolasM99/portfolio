@@ -34,7 +34,6 @@ function PortfolioSection({ showCircle, setCanHide }) {
         />
       )}
       <GeneralSection
-        // style={{ borderRadius: "20px 20px 0 0" }}
         header={t("general.portfolio.title")}
         Content={Content}
         _id={ROUTES.PORTFOLIO}
