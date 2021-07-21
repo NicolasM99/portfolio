@@ -9,24 +9,15 @@ import SocialMedia from "../components/SocialMedia/SocialMedia";
 
 function HomeSection({ setCanHide }) {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const { t } = useTranslation();
   return (
     <>
-      <Row
-        className="general-section-container home"
-        style={{
-          position: "sticky",
-          width: "100%",
-          top: "0",
-          zIndex: "0",
-        }}
-      >
+      <Row id="home_section" className="general-section-container home">
         <Col lg={4} id="bio">
-          <h4 className="font-weight-normal">{t("home.greetings")}</h4>
-          <h1>{t("general.nicolas.moreno")}</h1>
+          <h1 id="home-greeting">{t("home.greetings")}</h1>
+          <h1 id="home-name">{t("general.nicolas.moreno")}</h1>
           <h4>{t("general.multimedia.engineer")}</h4>
           <p>{t("home.description")}</p>
           <Link
@@ -55,6 +46,7 @@ function HomeSection({ setCanHide }) {
           </Row>
         </Col>
       </Row>
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>

@@ -59,11 +59,16 @@ body,
   position: relative;
 
   font-family: "Open Sans";
+  background-color: var(--bg-primary) !important;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   @media (max-height: 675px) {
-    font-size: 90% !important;
+    font-size: 80% !important;
   }
+}
+
+#body-container {
+  background-color: var(--bg-primary) !important;
 }

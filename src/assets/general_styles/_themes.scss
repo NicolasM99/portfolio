@@ -12,6 +12,7 @@
   --text-dark: rgba(0, 0, 0, 0.7);
   --text-light: rgba(0, 0, 0, 0.4);
   --shadow: rgba(0, 0, 0, 0.2);
+  --shadow-primary: hsla(#{$hue-primary-light}, 100%, 60%, 0.54);
   --btn-label: var(--bg-primary);
   transition: 0.4s;
 }
@@ -29,6 +30,7 @@
   --text-dark: rgba(255, 255, 255, 0.7);
   --text-light: rgba(255, 255, 255, 0.55);
   --shadow: rgba(0, 0, 0, 0.5);
+  --shadow-primary: hsla(#{$hue-primary-dark}, 100%, 60%, 0.54);
   --btn-label: var(--bg-primary);
   transition: 0.4s;
 }
