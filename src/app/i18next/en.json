@@ -15,5 +15,7 @@
   "home.about.me": "About me",
   "home.contact": "Contact me",
   "error404.title": "Error 404 :(",
-  "error404.description": "Sorry, we couldn't find this page."
+  "error404.description": "Sorry, we couldn't find this page.",
+  "quote.blackquote": "“You should get to the top of the mountain and look down instead of thinking how high the mountain is.”",
+  "quote.author": "Marques Brownlee"
 }

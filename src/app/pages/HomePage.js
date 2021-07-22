@@ -3,6 +3,7 @@ import React, { useEffect, Suspense, lazy } from "react";
 import ROUTES from "../router/routes.json";
 import GoBackTopBtn from "../components/GoBackTopBtn/GoBackTopBtn";
 import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
+import Quote from "../sections/Quote";
 const HomeSection = lazy(() => import("../sections/HomeSection"));
 const PortfolioSection = lazy(() => import("../sections/PortfolioSection"));
 const ReferencesSection = lazy(() => import("../sections/ReferencesSection"));
@@ -79,6 +80,7 @@ function HomePage({ setScrolling, scrolling, canHide, setCanHide }) {
         <AbilitiesSection />
         <TrajectorySection />
         <ReferencesSection />
+        <Quote />
         <Footer />
       </div>
     </Suspense>
