@@ -10,12 +10,14 @@
   "general.change.language": "Change language",
   "general.change.theme": "Change theme",
   "home.title": "Home",
-  "home.greetings": "Glad to see you, I'm",
+  "home.greetings": "Hi! I'm",
   "home.description": "I design and develop high quality multimedia applications and products.",
   "home.about.me": "About me",
   "home.contact": "Contact me",
   "error404.title": "Error 404 :(",
   "error404.description": "Sorry, we couldn't find this page.",
   "quote.blackquote": "“You should get to the top of the mountain and look down instead of thinking how high the mountain is.”",
-  "quote.author": "Marques Brownlee"
+  "quote.author": "Marques Brownlee",
+  "made.with.title": "Made with",
+  "made.with.see.repo": "See repo"
 }

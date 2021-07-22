@@ -1,7 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import GeneralSection from "../components/GeneralSection/GeneralSection";
 import ROUTES from "../router/routes.json";
+import { scrollWithOffset } from "../util/scrollWithOffset";
 const Content = () => (
   <div>
     <h3>This is my portfolio!</h3>
@@ -19,14 +21,24 @@ const Content = () => (
   </div>
 );
 
-function PortfolioSection() {
+function PortfolioSection({ showCircle, setCanHide }) {
   const { t } = useTranslation();
   return (
-    <GeneralSection
-      header={t("general.portfolio.title")}
-      Content={Content}
-      _id={ROUTES.PORTFOLIO}
-    />
+    <>
+      {showCircle && (
+        <Link
+          className="py-4"
+          onClick={(el) => scrollWithOffset(el, setCanHide)}
+          to={"#" + ROUTES.PORTFOLIO}
+          id="expanded-circle"
+        />
+      )}
+      <GeneralSection
+        header={t("general.portfolio.title")}
+        Content={Content}
+        _id={ROUTES.PORTFOLIO}
+      />
+    </>
   );
 }
 
