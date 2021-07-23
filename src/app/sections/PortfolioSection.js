@@ -25,14 +25,14 @@ function PortfolioSection({ showCircle, setCanHide }) {
   const { t } = useTranslation();
   return (
     <>
-      {showCircle && (
+      {/* {showCircle && (
         <Link
           className="py-4"
           onClick={(el) => scrollWithOffset(el, setCanHide)}
           to={"#" + ROUTES.PORTFOLIO}
           id="expanded-circle"
         />
-      )}
+      )} */}
       <GeneralSection
         header={t("general.portfolio.title")}
         Content={Content}

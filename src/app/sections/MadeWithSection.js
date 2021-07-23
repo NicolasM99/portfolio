@@ -2,7 +2,15 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import GeneralSection from "../components/GeneralSection/GeneralSection";
 
-const tools = ["React JS", "Bootstrap", "Firebase Hosting", "Github"];
+const tools = [
+  "React JS",
+  "Bootstrap",
+  "Firebase Hosting",
+  "Github",
+  "Sass",
+  "i18next",
+  "React Spring",
+];
 const Content = (t) => (
   <div>
     <h3>{t("made.with.title")}...</h3>

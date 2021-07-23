@@ -102,7 +102,7 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
         />
       </Navb.Brand>
       <Navb.Toggle aria-controls="basic-navbar-nav" />
-      <Nav activeKey="">
+      <Nav id="custom-nav" activeKey="">
         {Object.entries(ROUTES).map(
           (item, idx) =>
             item[0] !== "ERROR_404_NOT_FOUND" && (

@@ -17,10 +17,15 @@
   position: relative;
   margin: 0;
   background-color: var(--bg-primary);
-  transition: 0.4s;
+  // transition: 0.4s;
 }
 
 .quote-phrase {
+  color: var(--text-dark);
   font-family: "Times New Roman", Times, serif;
   font-size: 120%;
+}
+
+#quote-author-img {
+  filter: grayscale(1) brightness(1.2);
 }

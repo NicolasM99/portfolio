@@ -20,10 +20,11 @@ export default function Quote() {
       </Col>
       <Col md={4} className="d-flex justify-content-center">
         <Image
-          style={{ maxWidth: "250px" }}
+          style={{ maxWidth: "250px", padding: "0 30px" }}
           src="https://yt3.ggpht.com/ytc/AKedOLR-pT_JEsz_hcaA4Gjx8DHcqJ8mS42aTRqcVy6P7w=s900-c-k-c0x00ffffff-no-rj"
           roundedCircle
           fluid
+          id="quote-author-img"
         />
       </Col>
     </Row>

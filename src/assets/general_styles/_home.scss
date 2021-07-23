@@ -16,7 +16,7 @@
   width: 100%;
   top: 0;
   z-index: 0;
-  transition: 0s !important;
+  // transition: 0s !important;
 }
 
 #cube-img {
@@ -39,7 +39,7 @@
 
 #expanded-circle {
   opacity: 0.2;
-  transition: none !important;
+  // transition: none !important;
   background-color: var(--primary);
   --diameter: 95vw;
   left: calc((100vw - var(--diameter)) / 2);
