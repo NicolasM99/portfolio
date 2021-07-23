@@ -75,7 +75,7 @@ function HomePage({
           setScrolling(false);
         }
         lastScroll = currentScroll;
-      }, 50);
+      }, 200);
     }
   };
 
