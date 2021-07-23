@@ -28,4 +28,13 @@
 
 #quote-author-img {
   filter: grayscale(1) brightness(1.2);
+  border-radius: 50%;
+  transition: 0.2s;
+  max-width: 250px;
+  padding: 0 30px;
+  &:hover {
+    transition: 0.2s;
+    border-radius: 0;
+    filter: grayscale(0) brightness(1);
+  }
 }

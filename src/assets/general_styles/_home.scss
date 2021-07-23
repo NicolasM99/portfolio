@@ -7,21 +7,52 @@
     .col-lg-4 {
       padding: 1rem 1rem;
     }
+    #nicolas-moreno-posada {
+      height: 190px;
+    }
   }
   @media (max-width: $max-sm) {
     padding-top: 0;
     padding-bottom: 85px;
   }
+  height: calc(100vh - 70px) !important;
   position: sticky !important;
   width: 100%;
   top: 0;
   z-index: 0;
-  // transition: 0s !important;
-}
-
-#cube-img {
-  @media (max-width: $max-md) {
-    height: 190px;
+  #image-container {
+    position: relative;
+    align-content: center;
+    justify-content: center;
+    #solid-cube {
+      z-index: -1;
+      position: absolute;
+      left: 50%;
+      bottom: -80px;
+      height: 100%;
+      width: 100%;
+      max-height: 250px;
+      max-width: 250px;
+      background-color: var(--primary);
+    }
+    #wired-cube {
+      z-index: -1;
+      position: absolute;
+      left: 50%;
+      bottom: -40px;
+      height: 100%;
+      width: 100%;
+      max-height: 250px;
+      max-width: 250px;
+      border: 2px solid var(--primary);
+    }
+    #nicolas-moreno-posada {
+      padding: 0.5rem;
+      background: linear-gradient(0deg, var(--primary-dark), var(--secondary));
+      background-size: 400% 400%;
+      max-width: 250px;
+      border-radius: 50%;
+    }
   }
 }
 
@@ -35,27 +66,4 @@
 
 #home-greeting {
   color: var(--text-dark);
-}
-
-#expanded-circle {
-  opacity: 0.2;
-  // transition: none !important;
-  background-color: var(--primary);
-  --diameter: 95vw;
-  left: calc((100vw - var(--diameter)) / 2);
-  width: var(--diameter);
-  height: var(--diameter);
-  border-radius: 50%;
-  position: absolute;
-
-  @media (min-width: $md) {
-    bottom: calc((-1 * var(--diameter) + 6vw) + 70px);
-  }
-  @media (min-width: $lg) {
-    bottom: calc(-1 * var(--diameter) + 10vw);
-  }
-  @media (max-width: $max-md) {
-    bottom: calc((-1 * var(--diameter) + 8vw) + 70px);
-  }
-  transform: scale(1);
 }

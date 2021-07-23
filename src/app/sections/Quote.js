@@ -14,18 +14,22 @@ export default function Quote() {
         <blockquote>
           <i className="quote-phrase">{t("quote.blackquote")}</i>
           <p className="mt-3">
-            <b>- {t("quote.author")}</b>
+            <b> - {t("quote.author")}</b>
           </p>
         </blockquote>
       </Col>
       <Col md={4} className="d-flex justify-content-center">
-        <Image
-          style={{ maxWidth: "250px", padding: "0 30px" }}
-          src="https://yt3.ggpht.com/ytc/AKedOLR-pT_JEsz_hcaA4Gjx8DHcqJ8mS42aTRqcVy6P7w=s900-c-k-c0x00ffffff-no-rj"
-          roundedCircle
-          fluid
-          id="quote-author-img"
-        />
+        <a
+          href="https://www.youtube.com/user/marquesbrownlee"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            src="https://yt3.ggpht.com/ytc/AKedOLR-pT_JEsz_hcaA4Gjx8DHcqJ8mS42aTRqcVy6P7w=s900-c-k-c0x00ffffff-no-rj"
+            fluid
+            id="quote-author-img"
+          />
+        </a>
       </Col>
     </Row>
   );

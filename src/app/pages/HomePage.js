@@ -1,61 +1,82 @@
-import React, { useEffect, Suspense, lazy, useState } from "react";
+import React, { useEffect } from "react";
 import ROUTES from "../router/routes.json";
 import GoBackTopBtn from "../components/GoBackTopBtn/GoBackTopBtn";
 import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
+import Loadable from "react-loadable";
 import Quote from "../sections/Quote";
 import { useWindowDimensions } from "../util/useWindowDimensions";
-import * as _ from "lodash";
-import MadeWithSection from "../sections/MadeWithSection";
-const HomeSection = lazy(() => import("../sections/HomeSection"));
-const PortfolioSection = lazy(() => import("../sections/PortfolioSection"));
-const ReferencesSection = lazy(() => import("../sections/ReferencesSection"));
-const AbilitiesSection = lazy(() => import("../sections/AbilitiesSection"));
-const TrajectorySection = lazy(() => import("../sections/TrajectorySection"));
-const Footer = lazy(() => import("../sections/Footer"));
+import { throttle } from "lodash";
+const Navbar = Loadable({
+  loader: () => import("../components/Navbar/Navbar"),
+  loading: LoadingScreen,
+});
+const HomeSection = Loadable({
+  loader: () => import("../sections/HomeSection"),
+  loading: LoadingScreen,
+});
+const PortfolioSection = Loadable({
+  loader: () => import("../sections/PortfolioSection"),
+  loading: LoadingScreen,
+});
+const ReferencesSection = Loadable({
+  loader: () => import("../sections/ReferencesSection"),
+  loading: LoadingScreen,
+});
+const AbilitiesSection = Loadable({
+  loader: () => import("../sections/AbilitiesSection"),
+  loading: LoadingScreen,
+});
+const TrajectorySection = Loadable({
+  loader: () => import("../sections/TrajectorySection"),
+  loading: LoadingScreen,
+});
+const Footer = Loadable({
+  loader: () => import("../sections/Footer"),
+  loading: LoadingScreen,
+});
+const MadeWithSection = Loadable({
+  loader: () => import("../sections/MadeWithSection"),
+  loading: LoadingScreen,
+});
 
 var lastScroll = 0;
-// var canHideRef;
-function HomePage({ setScrolling, scrolling, canHide, setCanHide }) {
+function HomePage({
+  setScrolling,
+  scrolling,
+  canHide,
+  setCanHide,
+  theme,
+  setTheme,
+}) {
   const { height } = useWindowDimensions();
-  const [showHomeSection, setShowHomeSection] = useState(true);
   //TODO: Fix height of home for mobile and improve parallax
   const handleScroll = () => {
-    // setTimeout(() => {
     const bodyContainer = document.getElementById("body-container");
     if (
+      bodyContainer &&
+      document.getElementById("home_section") &&
       bodyContainer.scrollTop <
-      height -
-        document.getElementById("custom-navbar").getBoundingClientRect().height
+        height -
+          document.getElementById("custom-navbar").getBoundingClientRect()
+            .height
     ) {
-      if (!showHomeSection) setShowHomeSection(true);
-
       document.getElementById("home_section").style.top = `${
         -0.15 * bodyContainer.scrollTop
       }px`;
       document.getElementById("home_section").style.opacity =
         1 - bodyContainer.scrollTop / height;
-      // if (!showHomeSection) setShowHomeSection(true);
-      // if (document.getElementById("expanded-circle"))
-      //   document.getElementById("expanded-circle").style.transform = `scale(${
-      //     bodyContainer.scrollTop / height + 1
-      //   })`;
-    } else {
-      setShowHomeSection(false);
     }
-
     if (canHide) {
       setTimeout(() => {
-        const currentScroll =
-          document.getElementById("body-container").scrollTop;
+        const currentScroll = bodyContainer.scrollTop;
         if (currentScroll > lastScroll + 200) {
           if (!scrolling) setScrolling(true);
         } else if (currentScroll < lastScroll) {
           setScrolling(false);
         }
         lastScroll = currentScroll;
-      }, 200);
+      }, 50);
     }
-    // }, 50);
   };
 
   const handleMouseMove = (e) => {
@@ -69,28 +90,24 @@ function HomePage({ setScrolling, scrolling, canHide, setCanHide }) {
     }
   };
 
-  // useEffect(() => {
-  //   canHideRef = canHide;
-  // }, [canHide]);
-
-  const handleMouseMoveThrottled = _.throttle(handleMouseMove, 400);
+  const handleMouseMoveThrottled = throttle(handleMouseMove, 400);
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMoveThrottled);
-    // document
-    //   .getElementById("body-container")
-    //   .addEventListener("scroll", handleScroll);
     return () => {
-      // document
-      //   .getElementById("body-container")
-      //   .removeEventListener("scroll", handleScroll);
       window.removeEventListener("mousemove", handleMouseMoveThrottled);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <Suspense fallback={<LoadingScreen />}>
+    <>
+      <Navbar
+        scrolling={scrolling}
+        setCanHide={setCanHide}
+        theme={theme}
+        setTheme={setTheme}
+      />{" "}
       <div
         onScroll={() => handleScroll()}
         data-bs-spy="scroll"
@@ -108,14 +125,8 @@ function HomePage({ setScrolling, scrolling, canHide, setCanHide }) {
         {/* <FloatingButton /> */}
         <GoBackTopBtn setCanHide={setCanHide} scrolling={scrolling} />
         <div id={ROUTES.HOME} style={{ height: "0" }}></div>
-        <HomeSection
-          setCanHide={setCanHide}
-          showHomeSection={showHomeSection}
-        />
-        <PortfolioSection
-          setCanHide={setCanHide}
-          showCircle={showHomeSection}
-        />
+        <HomeSection setCanHide={setCanHide} />
+        <PortfolioSection />
         <AbilitiesSection />
         <TrajectorySection />
         <ReferencesSection />
@@ -123,7 +134,7 @@ function HomePage({ setScrolling, scrolling, canHide, setCanHide }) {
         <MadeWithSection />
         <Footer />
       </div>
-    </Suspense>
+    </>
   );
 }
 

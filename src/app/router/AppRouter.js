@@ -1,11 +1,16 @@
-import React, { Suspense, lazy, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
-import Navbar from "../components/Navbar/Navbar";
 import ROUTES from "./routes.json";
-
-const HomePage = lazy(() => import("../pages/HomePage"));
-const Error404Page = lazy(() => import("../pages/Error404Page"));
+import Loadable from "react-loadable";
+const HomePage = Loadable({
+  loader: () => import("../pages/HomePage"),
+  loading: LoadingScreen,
+});
+const Error404Page = Loadable({
+  loader: () => import("../pages/Error404Page"),
+  loading: LoadingScreen,
+});
 
 function AppRouter(props) {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -15,36 +20,29 @@ function AppRouter(props) {
     localStorage.setItem("theme", theme);
   }, [theme]);
   return (
-    <Suspense fallback={<LoadingScreen />}>
-      <div className={theme}>
-        <Navbar
-          scrolling={scrolling}
-          setCanHide={setCanHide}
-          theme={theme}
-          setTheme={setTheme}
+    <div className={theme}>
+      <Switch>
+        <Route
+          path={"/" + ROUTES.ERROR_404_NOT_FOUND}
+          component={Error404Page}
         />
-        <Switch>
-          <Route
-            path={"/" + ROUTES.ERROR_404_NOT_FOUND}
-            component={Error404Page}
-          />
-          <Route
-            path="/"
-            // component={HomePage}
-            children={() => (
-              <HomePage
-                scrolling={scrolling}
-                canHide={canHide}
-                setCanHide={setCanHide}
-                setScrolling={setScrolling}
-              />
-            )}
-            exact
-          />
-          <Redirect to={"/" + ROUTES.ERROR_404_NOT_FOUND} />
-        </Switch>
-      </div>
-    </Suspense>
+        <Route
+          path="/"
+          children={() => (
+            <HomePage
+              theme={theme}
+              setTheme={setTheme}
+              scrolling={scrolling}
+              canHide={canHide}
+              setCanHide={setCanHide}
+              setScrolling={setScrolling}
+            />
+          )}
+          exact
+        />
+        <Redirect to={"/" + ROUTES.ERROR_404_NOT_FOUND} />
+      </Switch>
+    </div>
   );
 }
 

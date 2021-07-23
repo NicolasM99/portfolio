@@ -64,7 +64,7 @@
     color: var(--text-light);
     padding: 0 16px;
     &:focus {
-      color: var(--primary) !important;
+      color: var(--primary);
       transition: 0.2s;
     }
     &:active {
@@ -86,7 +86,7 @@
     }
   }
   @media (min-width: $lg) {
-    padding: 0 calc(15px + 2 * (100% / 12)) !important;
+    padding: 0 calc(15px + 2 * (100% / 12));
   }
   @media (min-width: $md) {
     justify-content: space-between;

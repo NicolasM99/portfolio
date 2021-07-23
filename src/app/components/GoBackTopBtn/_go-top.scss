@@ -16,9 +16,9 @@
   z-index: 999;
   &:hover,
   &:focus {
-    color: var(--primary-dark) !important;
+    color: var(--primary-dark);
   }
   &:active {
-    color: var(--primary-darker) !important;
+    color: var(--primary-darker);
   }
 }

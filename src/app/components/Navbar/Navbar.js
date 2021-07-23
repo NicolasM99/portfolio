@@ -22,23 +22,18 @@ const RenderNavHashLink = ({
       label={label}
       render={(ref, triggerHandler) => (
         <Nav.Link
-          ref={(current !== index && ref) || null}
+          ref={ref}
           {...triggerHandler}
           id={`navlink-${index}`}
           onClick={(el) => {
             setCanHide(false);
-            if (current !== index) {
-              document
-                .getElementById("navlink-" + index)
-                .classList.remove("active");
-            }
+            console.log(index, current);
             setCurrent(index);
             document.activeElement.blur();
             scrollWithOffset(el, setCanHide);
           }}
           href={`#${route}`}
         >
-          {" "}
           <i
             href={`#${route}`}
             className={`navbar-icon fa fa-${icons[route]}`}
@@ -54,7 +49,10 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
   const { width, sizeRef } = useWindowDimensions();
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState(
-    localStorage.getItem("language") || "es"
+    localStorage.getItem("language") ||
+      (navigator.language.includes("es") && "es") ||
+      (navigator.language.includes("en") && "en") ||
+      "es"
   );
   const changeLanguage = () => {
     setLanguage(language === "es" ? "en" : "es");
@@ -65,6 +63,10 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
     localStorage.setItem("language", language);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
+
+  // useEffect(() => {
+  //   console.log(current);
+  // }, [current]);
 
   //TODO: FIX NAVBAR HIDING FOR MOBILE
   return (

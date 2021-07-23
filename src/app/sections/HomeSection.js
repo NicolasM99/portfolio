@@ -4,21 +4,17 @@ import { Row, Col, Image, Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { scrollWithOffset } from "../util/scrollWithOffset";
 import { useTranslation } from "react-i18next";
-import cube from "../../assets/images/cube.png";
+import nmp from "../../assets/images/nicolas_moreno_posada.jpeg";
 import SocialMedia from "../components/SocialMedia/SocialMedia";
 
-function HomeSection({ setCanHide, showHomeSection }) {
+function HomeSection({ setCanHide }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const { t } = useTranslation();
   return (
     <>
-      <Row
-        id="home_section"
-        style={{ opacity: showHomeSection ? 1 : 0 }}
-        className="general-section-container home"
-      >
+      <Row id="home_section" className="general-section-container home">
         <Col lg={4} id="bio">
           <h1 id="home-greeting">{t("home.greetings")}</h1>
           <h1 id="home-name">{t("general.nicolas.moreno")}</h1>
@@ -34,7 +30,17 @@ function HomeSection({ setCanHide, showHomeSection }) {
           </Link>
         </Col>
         <Col lg={4} className="text-center">
-          <Image id="cube-img" src={cube} alt="cube-img" />
+          <div id="image-container">
+            {/* <div className="cube rotate3d" id="solid-cube" />
+            <div className="cube rotate3d" id="wired-cube" /> */}
+            <Image
+              id="nicolas-moreno-posada"
+              src={nmp}
+              alt="Nicolas Moreno Posada"
+              className="rotate3d_gradient"
+            />
+          </div>
+
           <SocialMedia />
           <Row className="home-buttons-container">
             <div>
