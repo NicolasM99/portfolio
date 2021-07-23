@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import GeneralSection from "../components/GeneralSection/GeneralSection";
-
+import quote_author from "../../assets/images/quote_author.jpeg";
 export default function Quote() {
   const { t } = useTranslation();
   const Content = () => (
@@ -25,7 +25,8 @@ export default function Quote() {
           rel="noreferrer"
         >
           <Image
-            src="https://yt3.ggpht.com/ytc/AKedOLR-pT_JEsz_hcaA4Gjx8DHcqJ8mS42aTRqcVy6P7w=s900-c-k-c0x00ffffff-no-rj"
+            alt="quote_author"
+            src={quote_author}
             fluid
             id="quote-author-img"
           />
@@ -33,11 +34,5 @@ export default function Quote() {
       </Col>
     </Row>
   );
-  return (
-    <GeneralSection
-      //   header={t("general.abilities.title")}
-      Content={Content}
-      _id={"quotes"}
-    />
-  );
+  return <GeneralSection Content={Content} _id={"quotes"} />;
 }
