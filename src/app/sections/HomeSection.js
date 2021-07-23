@@ -4,7 +4,7 @@ import { Row, Col, Image, Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { scrollWithOffset } from "../util/scrollWithOffset";
 import { useTranslation } from "react-i18next";
-import nmp from "../../assets/images/nicolas_moreno_posada.jpeg";
+import nmp from "../../assets/images/nicolas_moreno_posada.jpg";
 import SocialMedia from "../components/SocialMedia/SocialMedia";
 
 function HomeSection({ setCanHide }) {

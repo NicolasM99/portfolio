@@ -27,7 +27,6 @@ const RenderNavHashLink = ({
           id={`navlink-${index}`}
           onClick={(el) => {
             setCanHide(false);
-            console.log(index, current);
             setCurrent(index);
             document.activeElement.blur();
             scrollWithOffset(el, setCanHide);
@@ -64,11 +63,6 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
 
-  // useEffect(() => {
-  //   console.log(current);
-  // }, [current]);
-
-  //TODO: FIX NAVBAR HIDING FOR MOBILE
   return (
     <Navb
       className={scrolling && "scrolling"}

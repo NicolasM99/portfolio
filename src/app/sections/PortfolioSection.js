@@ -1,9 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import GeneralSection from "../components/GeneralSection/GeneralSection";
 import ROUTES from "../router/routes.json";
-import { scrollWithOffset } from "../util/scrollWithOffset";
 const Content = () => (
   <div>
     <h3>This is my portfolio!</h3>
