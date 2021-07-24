@@ -40,6 +40,10 @@ const MadeWithSection = Loadable({
   loader: () => import("../sections/MadeWithSection"),
   loading: LoadingScreen,
 });
+const ContactCTASection = Loadable({
+  loader: () => import("../sections/ContactCTASection"),
+  loading: LoadingScreen,
+});
 
 var lastScroll = 0;
 function HomePage({
@@ -135,6 +139,7 @@ function HomePage({
         <ReferencesSection />
         <Quote />
         <MadeWithSection />
+        <ContactCTASection />
         <Footer />
       </div>
     </>
