@@ -33,6 +33,8 @@ export default function SocialMedia({ color }) {
           render={(ref, triggerHandler) => {
             return (
               <a
+                data-aos="flip-right"
+                data-aos-delay={900 + idx * 100 + ""}
                 ref={ref}
                 {...triggerHandler}
                 href={item.link}
