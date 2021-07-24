@@ -106,10 +106,9 @@ function HomePage({
     AOS.init({
       duration: 800,
       once: true,
-      // anchorPlacement: "top-center",
     });
   }, []);
-
+  //TODO: Add Call to action section (Contact)
   return (
     <>
       <Navbar
