@@ -14,7 +14,7 @@ export default function Quote() {
         <blockquote>
           <i className="quote-phrase">{t("quote.blackquote")}</i>
           <p className="mt-3">
-            <b> - {t("quote.author")}</b>
+            <p id="quote-author-name"> - {t("quote.author")}</p>
           </p>
         </blockquote>
       </Col>

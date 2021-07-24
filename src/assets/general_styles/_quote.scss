@@ -26,6 +26,10 @@
   font-size: 120%;
 }
 
+#quote-author-name {
+  color: var(--primary);
+}
+
 #quote-author-img {
   filter: grayscale(1) brightness(1.2);
   border-radius: 50%;

@@ -106,7 +106,7 @@ function HomePage({
     AOS.init({
       duration: 800,
       once: true,
-      anchorPlacement: "top-center",
+      // anchorPlacement: "top-center",
     });
   }, []);
 
