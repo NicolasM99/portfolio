@@ -1,0 +1,12 @@
+footer {
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  background-color: var(--bg-secondary);
+  flex-direction: column;
+  // transition: 0.4s;
+  padding-bottom: 70px;
+}

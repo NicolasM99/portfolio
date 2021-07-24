@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { useSpring, animated as anim } from "react-spring";
-import "./floating-button.css";
 
 const fast = { tension: 1200, friction: 20 };
-const slow = { mass: 10, friction: 200 };
+// const slow = { mass: 10, friction: 200 };
 const trans = (x, y) => `translate3d(${x}px,${y}px,0) translate3d(-50%,-50%,0)`;
 function FloatingButton(props) {
   const [{ pos1 }, setPos1] = useSpring(() => ({
@@ -49,16 +48,17 @@ function FloatingButton(props) {
 
     window.addEventListener("mousemove", handler);
     return () => window.removeEventListener("mousemove", handler);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
       <svg style={{ position: "absolute", width: 0, height: 0 }}>
         <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="15" />
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="3" />
           <feColorMatrix
             in="blur"
-            values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 15 -7"
+            values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 3 -2"
           />
         </filter>
       </svg>

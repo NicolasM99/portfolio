@@ -1,0 +1,24 @@
+.go-top-not-scrolling {
+  transition: 0.15s ease-in-out;
+  right: 20px;
+}
+
+.go-top-scrolling {
+  right: -80px;
+
+  transition: 0.15s ease-in-out;
+}
+
+.go-top {
+  color: var(--primary);
+  position: fixed;
+  bottom: 100px;
+  z-index: 999;
+  &:hover,
+  &:focus {
+    color: var(--primary-dark);
+  }
+  &:active {
+    color: var(--primary-darker);
+  }
+}

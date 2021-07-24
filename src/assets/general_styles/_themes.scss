@@ -1,0 +1,36 @@
+.light {
+  --primary: hsl(#{$hue-primary-light}, 100%, 60%);
+  --primary-light: hsl(#{$hue-primary-light}, 100%, 70%);
+  --primary-dark: hsl(#{$hue-primary-light}, 100%, 40%);
+  --primary-darker: hsl(#{$hue-primary-light}, 100%, 30%);
+  --secondary: hsl(#{$hue-secondary-light}, 86%, 51%);
+  --light-gray: hsl(0, 0%, 91%);
+  --gray: hsl(0, 0%, 69%);
+  --dark-gray: hsl(0, 0%, 25%);
+  --bg-primary: hsl(0, 0%, 100%);
+  --bg-secondary: hsl(0, 0%, 96%);
+  --text-dark: rgba(0, 0, 0, 0.7);
+  --text-light: rgba(0, 0, 0, 0.4);
+  --shadow: rgba(0, 0, 0, 0.2);
+  --shadow-primary: hsla(#{$hue-primary-light}, 100%, 60%, 0.54);
+  --btn-label: var(--bg-primary);
+  // transition: 0.4s;
+}
+.dark {
+  --primary: hsl(#{$hue-primary-dark}, 100%, 60%);
+  --primary-light: hsl(#{$hue-primary-dark}, 100%, 70%);
+  --primary-dark: hsl(#{$hue-primary-dark}, 100%, 40%);
+  --primary-darker: hsl(#{$hue-primary-dark}, 100%, 30%);
+  --secondary: hsl(#{$hue-secondary-dark}, 100%, 50%);
+  --light-gray: hsl(0, 0%, 80%);
+  --gray: hsl(0, 0%, 52%);
+  --dark-gray: hsl(0, 0%, 8%);
+  --bg-primary: hsl(#{$hue-bg-primary-dark}, 26%, 14%);
+  --bg-secondary: hsl(#{$hue-bg-secondary-dark}, 28%, 10%);
+  --text-dark: rgba(255, 255, 255, 0.7);
+  --text-light: rgba(255, 255, 255, 0.55);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --shadow-primary: hsla(#{$hue-primary-dark}, 100%, 60%, 0.54);
+  --btn-label: var(--bg-primary);
+  // transition: 0.4s;
+}

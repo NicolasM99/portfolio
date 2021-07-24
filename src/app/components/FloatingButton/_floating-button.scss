@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
 }
 
 .b1,
@@ -14,6 +15,7 @@
   will-change: transform;
   border-radius: 50%;
   background: black;
+  z-index: 999;
 }
 
 .b1 {

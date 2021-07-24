@@ -1,0 +1,40 @@
+.quote-container {
+  height: 100px;
+  display: flex;
+  @media (min-width: $lg) {
+    align-items: center;
+  }
+  @media (max-width: $max-lg) {
+    align-items: flex-start;
+  }
+  @media (max-width: $max-md) {
+    .row .col blockquote {
+      text-align: center;
+    }
+  }
+  padding-bottom: 140px;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  background-color: var(--bg-primary);
+  // transition: 0.4s;
+}
+
+.quote-phrase {
+  color: var(--text-dark);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 120%;
+}
+
+#quote-author-img {
+  filter: grayscale(1) brightness(1.2);
+  border-radius: 50%;
+  transition: 0.2s;
+  max-width: 250px;
+  padding: 0 30px;
+  &:hover {
+    transition: 0.2s;
+    border-radius: 0;
+    filter: grayscale(0) brightness(1);
+  }
+}

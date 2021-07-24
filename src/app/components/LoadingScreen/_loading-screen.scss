@@ -1,0 +1,14 @@
+#loading-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: var(--bg-primary);
+  .loading {
+    color: var(--primary);
+  }
+  .error {
+    color: red;
+  }
+}

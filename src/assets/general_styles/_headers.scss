@@ -1,0 +1,23 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Poppins";
+  font-weight: bold;
+}
+h1,
+h3 {
+  color: var(--primary);
+}
+h2,
+h4 {
+  color: var(--text-dark);
+}
