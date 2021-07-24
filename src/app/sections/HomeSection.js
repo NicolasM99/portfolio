@@ -16,23 +16,36 @@ function HomeSection({ setCanHide }) {
     <>
       <Row id="home_section" className="general-section-container home">
         <Col lg={4} id="bio">
-          <h1 id="home-greeting">{t("home.greetings")}</h1>
-          <h1 id="home-name">{t("general.nicolas.moreno")}</h1>
-          <h4>{t("general.multimedia.engineer")}</h4>
-          <p>{t("home.description")}</p>
-          <Link
-            className="py-4"
-            onClick={(el) => scrollWithOffset(el, setCanHide)}
-            to={"#" + ROUTES.PORTFOLIO}
-          >
-            <i className="fa fa-chevron-down animate-up-and-down mr-2" />{" "}
-            {t("home.about.me")}
-          </Link>
+          <h1 data-aos="fade-up" id="home-greeting">
+            {t("home.greetings")}
+          </h1>
+          <h1 data-aos="fade-up" data-aos-delay="100" id="home-name">
+            {t("general.nicolas.moreno")}
+          </h1>
+          <h4 data-aos="fade-up" data-aos-delay="200">
+            {t("general.multimedia.engineer")}
+          </h4>
+          <p data-aos="fade-up" data-aos-delay="300">
+            {t("home.description")}
+          </p>
+          <div data-aos="fade-up" data-aos-delay="400">
+            <Link
+              className="py-4"
+              onClick={(el) => scrollWithOffset(el, setCanHide)}
+              to={"#" + ROUTES.PORTFOLIO}
+            >
+              <i className="fa fa-chevron-down animate-up-and-down mr-2" />{" "}
+              {t("home.about.me")}
+            </Link>
+          </div>
         </Col>
-        <Col lg={4} className="text-center">
+        <Col
+          lg={4}
+          data-aos="fade-up"
+          data-aos-delay="500"
+          className="text-center"
+        >
           <div id="image-container">
-            {/* <div className="cube rotate3d" id="solid-cube" />
-            <div className="cube rotate3d" id="wired-cube" /> */}
             <Image
               id="nicolas-moreno-posada"
               src={nmp}

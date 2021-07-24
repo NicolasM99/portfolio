@@ -6,6 +6,8 @@ import Loadable from "react-loadable";
 import Quote from "../sections/Quote";
 import { useWindowDimensions } from "../util/useWindowDimensions";
 import { throttle } from "lodash";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Navbar = Loadable({
   loader: () => import("../components/Navbar/Navbar"),
   loading: LoadingScreen,
@@ -49,8 +51,8 @@ function HomePage({
   setTheme,
 }) {
   const { height } = useWindowDimensions();
-  //TODO: Fix height of home for mobile and improve parallax
   const handleScroll = () => {
+    AOS.refresh();
     const bodyContainer = document.getElementById("body-container");
     if (
       bodyContainer &&
@@ -100,6 +102,14 @@ function HomePage({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      anchorPlacement: "top-center",
+    });
+  }, []);
+
   return (
     <>
       <Navbar
@@ -109,18 +119,12 @@ function HomePage({
         setTheme={setTheme}
       />{" "}
       <div
-        onScroll={() => handleScroll()}
+        onScroll={handleScroll}
         data-bs-spy="scroll"
         data-bs-target="#custom-navbar"
         data-bs-offset="200"
         id="body-container"
         tabIndex="0"
-        style={{
-          position: "relative",
-          overflowY: "scroll",
-          height: "100vh",
-          overflowX: "hidden",
-        }}
       >
         {/* <FloatingButton /> */}
         <GoBackTopBtn setCanHide={setCanHide} scrolling={scrolling} />
