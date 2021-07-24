@@ -1,4 +1,5 @@
 {
+  "contact-cta.title": "Want to know something else?",
   "general.go.back": "Go back",
   "general.home.title": "Home",
   "general.portfolio.title": "Portfolio",
@@ -16,6 +17,7 @@
   "home.about.me": "About me",
   "home.contact": "Contact me",
   "loading.error.try.again": "Error loading this page! Please try again...",
+  "loading.reload": "Reload",
   "error404.title": "Error 404 :(",
   "error404.description": "Sorry, we couldn't find this page.",
   "quote.blackquote": "“You should get to the top of the mountain and look down instead of thinking how high the mountain is.”",

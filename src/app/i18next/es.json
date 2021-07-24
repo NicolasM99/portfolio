@@ -1,4 +1,5 @@
 {
+  "contact-cta.title": "¿Te interesaría conocer algo más?",
   "general.go.back": "Volver",
   "general.home.title": "Inicio",
   "general.portfolio.title": "Portafolio",
@@ -16,6 +17,7 @@
   "home.about.me": "Acerca de mí",
   "home.contact": "Contáctame",
   "loading.error.try.again": "¡Error al cargar la página! Por favor intenta de nuevo...",
+  "loading.reload": "Recargar",
   "error404.title": "Error 404 :(",
   "error404.description": "Lo sentimos, no encontramos esta página",
   "quote.blackquote": "“Deberías llegar a la cima de la montaña y mirar hacia abajo en vez de estar pensando qué tan alto está.”",
