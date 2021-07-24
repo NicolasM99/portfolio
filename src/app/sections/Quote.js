@@ -13,9 +13,9 @@ export default function Quote() {
       >
         <blockquote>
           <i className="quote-phrase">{t("quote.blackquote")}</i>
-          <p className="mt-3">
+          <div className="mt-3">
             <p id="quote-author-name"> - {t("quote.author")}</p>
-          </p>
+          </div>
         </blockquote>
       </Col>
       <Col md={4} className="d-flex justify-content-center">
