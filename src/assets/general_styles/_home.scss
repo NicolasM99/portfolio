@@ -1,14 +1,23 @@
 .home {
   background-color: var(--bg-secondary) !important;
   @media (max-width: $max-lg) {
-    height: calc(100vh - 70px);
+    height: 100% !important;
     padding: 85px 0;
     text-align: center;
     .col-lg-4 {
       padding: 1rem 1rem;
     }
-    #nicolas-moreno-posada {
-      height: 190px;
+  }
+  @media (max-width: $max-lg) {
+    flex-direction: column;
+    .col-lg-4 {
+      margin: auto;
+      max-width: 405px !important;
+    }
+  }
+  @media (min-width: $lg) {
+    .col-lg-4 {
+      max-width: 350px !important;
     }
   }
   @media (max-width: $max-sm) {
@@ -24,34 +33,22 @@
     position: relative;
     align-content: center;
     justify-content: center;
-    #solid-cube {
-      z-index: -1;
-      position: absolute;
-      left: 50%;
-      bottom: -80px;
-      height: 100%;
-      width: 100%;
-      max-height: 250px;
-      max-width: 250px;
-      background-color: var(--primary);
-    }
-    #wired-cube {
-      z-index: -1;
-      position: absolute;
-      left: 50%;
-      bottom: -40px;
-      height: 100%;
-      width: 100%;
-      max-height: 250px;
-      max-width: 250px;
-      border: 2px solid var(--primary);
-    }
     #nicolas-moreno-posada {
       padding: 0.5rem;
       background: linear-gradient(0deg, var(--primary-dark), var(--secondary));
       background-size: 400% 400%;
-      max-width: 250px;
       border-radius: 50%;
+      @media (min-width: $lg) {
+        max-width: 250px;
+      }
+      @media (max-width: $max-lg) {
+        max-width: 170px;
+      }
+      @media (max-height: 653px) {
+        @media (max-width: 320px) {
+          max-width: 100px;
+        }
+      }
     }
   }
 }

@@ -1,5 +1,10 @@
 a {
   color: var(--primary);
+  font-weight: bold;
+  font-family: Poppins;
+  i {
+    margin-right: 0.5rem;
+  }
 }
 
 a:hover {

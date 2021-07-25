@@ -17,6 +17,7 @@
 @import "assets/general_styles/_quote.scss";
 @import "assets/general_styles/lists";
 @import "assets/general_styles/error-page";
+@import "assets/general_styles/portfolio";
 @import "app/components/FloatingButton/floating-button";
 @import "app/components/LoadingScreen/loading-screen";
 @import "app/components/Navbar/navbar";
@@ -42,7 +43,7 @@
   font-family: "Poppins";
   font-style: normal;
   font-weight: bold;
-  src: url("./assets/fonts/Poppins/Poppins-SemiBold.ttf");
+  src: url("./assets/fonts/Poppins/Poppins-Medium.ttf");
 }
 
 @font-face {

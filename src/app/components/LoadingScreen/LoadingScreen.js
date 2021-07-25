@@ -13,8 +13,8 @@ function LoadingScreen(props) {
     );
   }
   return (
-    <div id="loading-screen">
-      <Spinner className="loading" animation="grow" />{" "}
+    <div style={props.style} id="loading-screen">
+      <Spinner className="loading mr-3" animation="grow" />{" "}
       <h2 className="loading">{t("general.loading")}...</h2>
     </div>
   );

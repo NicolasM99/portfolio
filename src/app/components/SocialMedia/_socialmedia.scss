@@ -6,10 +6,8 @@
   a {
     transition: 0.2s;
   }
-  a:hover {
-    transform: scale(1.4);
-  }
 }
 .social-media-icon {
+  transition: 0.2s;
   text-align: center;
 }

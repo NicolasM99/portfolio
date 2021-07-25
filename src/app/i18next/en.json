@@ -1,5 +1,5 @@
 {
-  "contact-cta.title": "Want to know something else?",
+  "contact-cta.title": "Want to know more?",
   "general.go.back": "Go back",
   "general.home.title": "Home",
   "general.portfolio.title": "Portfolio",
@@ -20,6 +20,9 @@
   "loading.reload": "Reload",
   "error404.title": "Error 404 :(",
   "error404.description": "Sorry, we couldn't find this page.",
+  "portfolio.description": "Some of the projects I've done...",
+  "portfolio.see.project": "See more",
+  "portfolio.see.portfolio": "See portfolio",
   "quote.blackquote": "“You should get to the top of the mountain and look down instead of thinking how high the mountain is.”",
   "quote.author": "Marques Brownlee",
   "made.with.title": "Made with",

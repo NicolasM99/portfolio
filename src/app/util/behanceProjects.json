@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://www.behance.net/gallery/118842037/Segunda-entrega-Render-Escenarios-Finalizados",
+    "img": {
+      "src": "https://mir-s3-cdn-cf.behance.net/projects/original/2ad606112944565.Y3JvcCwxMTk3LDkzNywyNTIsMA.png",
+      "alt": "3D Animation excercises"
+    },
+    "title": {
+      "es": "Ejercicios Animación 3D",
+      "en": "3D Animation Excercises"
+    },
+    "description": {
+      "es": "Trabajos realizados en la asignatura Animación 3D de mi carrera usando Blender y Autodesk Maya.",
+      "en": "Assignments from my 3D Animation subject using Blender and Autodesk Maya."
+    }
+  },
+  {
+    "url": "https://www.behance.net/gallery/112945277/Modelo-3D-de-automovil",
+    "img": {
+      "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2ac9b3112945277.601dc351e35c9.png",
+      "alt": "3D Vehicle Model"
+    },
+    "title": {
+      "es": "Modelo 3D de automóvil",
+      "en": "3D Vehicle Model"
+    },
+    "description": {
+      "es": "Modelado 3D de un vehículo Chevy Bel Air 56. Realizado con Autodesk Maya.",
+      "en": "Chevy Bel Air 56 3D model. Made with Autodesk Maya."
+    }
+  }
+]

@@ -1,0 +1,71 @@
+.swiper-container {
+  width: 100%;
+  height: 500px;
+}
+
+.swiper-slide {
+  padding: 0 2.5rem;
+  font-size: 18px;
+  background: var(--bg-primary);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  img {
+    min-height: 200px;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+  h5 {
+    color: var(--text-dark);
+    margin: 10px 0;
+  }
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+}
+.swiper-button-next {
+  right: 0 !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  border-radius: 15px;
+  transition: 0.2s;
+  &:active {
+    transition: 0.2s;
+    background-color: var(--text-light);
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--primary) !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--text-dark) !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--primary) !important;
+}
+
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next::after {
+  display: none;
+}

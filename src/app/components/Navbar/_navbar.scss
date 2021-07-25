@@ -60,6 +60,13 @@
     display: none;
   }
   .nav-link {
+    @media (max-width: 310px) {
+      font-size: 75%;
+    }
+
+    i {
+      margin-right: 0;
+    }
     transition: 0.2s;
     color: var(--text-light);
     padding: 0 16px;

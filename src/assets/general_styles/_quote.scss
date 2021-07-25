@@ -18,7 +18,29 @@
   margin: 0;
   background-color: var(--bg-primary);
 }
+.quote-author-container {
+  display: flex;
+  @media (min-width: $lg) {
+    justify-content: flex-end;
+    img {
+      padding: 0;
+    }
+  }
+  @media (max-width: $max-lg) {
+    justify-content: center;
+  }
+}
 
+.quote-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 700px !important;
+  margin: auto;
+}
 .quote-phrase {
   color: var(--text-dark);
   font-family: "Times New Roman", Times, serif;
@@ -34,10 +56,14 @@
   border-radius: 50%;
   transition: 0.2s;
   max-width: 250px;
-  padding: 0 30px;
+  padding: 0 50px;
+  padding-right: 0;
   &:hover {
     transition: 0.2s;
     border-radius: 0;
     filter: grayscale(0) brightness(1);
+  }
+  @media (max-width: $max-lg) {
+    margin-right: 50px;
   }
 }

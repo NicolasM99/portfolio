@@ -2,6 +2,7 @@
 
 button {
   outline: none;
+  font-family: Poppins;
   &.btn {
     min-width: 100px;
     max-width: 180px;
@@ -45,5 +46,8 @@ button {
       border-color: var(--primary-darker);
       background-color: var(--primary-darker);
     }
+  }
+  i {
+    margin-right: 0.5rem;
   }
 }

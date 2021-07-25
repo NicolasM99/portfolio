@@ -4,12 +4,13 @@ import GeneralSection from "../components/GeneralSection/GeneralSection";
 
 const tools = [
   "React JS",
-  "Bootstrap",
+  "Bootstrap JS",
   "Firebase Hosting",
   "Github",
-  "Sass",
+  "Node Sass",
   "i18next",
   "React Spring",
+  "Swiper JS",
 ];
 const Content = (t) => (
   <div>
@@ -24,8 +25,8 @@ const Content = (t) => (
       target="_blank"
       rel="noreferrer"
     >
-      {" "}
-      <i className="fa fa-external-link-alt" /> {t("made.with.see.repo")}
+      <i className="fa fa-external-link-alt" />
+      {t("made.with.see.repo")}
     </a>
   </div>
 );

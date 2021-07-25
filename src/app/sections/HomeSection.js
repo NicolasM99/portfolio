@@ -58,11 +58,13 @@ function HomeSection({ setCanHide }) {
           <Row className="home-buttons-container">
             <div>
               <Button variant="outline-primary">
-                <i className="fa fa-cloud-download-alt mr-2" /> CV
+                <i className="fa fa-cloud-download-alt" />
+                CV
               </Button>
             </div>
             <div>
               <Button onClick={handleShow} variant="primary">
+                <i className="fa fa-phone-alt" />
                 {t("home.contact")}
               </Button>
             </div>
