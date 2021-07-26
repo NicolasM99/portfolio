@@ -7,14 +7,24 @@ export default function Quote() {
   const { t } = useTranslation();
   const Content = () => (
     <Row className="quote-wrapper">
+      <Row className="w-100 mb-4 ">
+        <h2>{t("quote.title")}</h2>
+      </Row>
       <Col
         md={8}
         className="d-flex h-100 align-items-center flex-column justify-content-center"
       >
         <blockquote>
-          <i className="quote-phrase">{t("quote.blackquote")}</i>
+          <p className="quote-phrase">{t("quote.blackquote")}</p>
           <div className="mt-3">
-            <p id="quote-author-name"> - {t("quote.author")}</p>
+            <a
+              href="https://www.youtube.com/user/marquesbrownlee"
+              target="_blank"
+              rel="noreferrer"
+              id="quote-author-name"
+            >
+              <i className="fab fa-youtube" /> {t("quote.author")}
+            </a>
           </div>
         </blockquote>
       </Col>

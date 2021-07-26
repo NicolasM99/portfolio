@@ -13,7 +13,7 @@ const tools = [
   "Swiper JS",
 ];
 const Content = (t) => (
-  <div>
+  <div className="small-section">
     <h3>{t("made.with.title")}...</h3>
     <ul>
       {tools.map((tool, idx) => (

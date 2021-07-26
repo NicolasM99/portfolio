@@ -6,17 +6,10 @@ import { scrollWithOffset } from "../../util/scrollWithOffset";
 import { useWindowDimensions } from "../../util/useWindowDimensions";
 import Tooltip from "../Tooltip/Tooltip";
 const icons = JSON.parse(
-  `{"${ROUTES.HOME}": "house-user","${ROUTES.PORTFOLIO}": "briefcase","${ROUTES.ABILITIES}": "tools","${ROUTES.TRAJECTORY}": "globe-americas","${ROUTES.REFERENCES}": "id-card"}`
+  `{"${ROUTES.HOME}": "house-user","${ROUTES.ABOUT}": "info-circle", "${ROUTES.PORTFOLIO}": "briefcase","${ROUTES.ABILITIES}": "tools","${ROUTES.TRAJECTORY}": "globe-americas"}`
 );
 
-const RenderNavHashLink = ({
-  current,
-  setCurrent,
-  route,
-  label,
-  index,
-  setCanHide,
-}) => {
+const RenderNavHashLink = ({ route, label, index, setCanHide }) => {
   return (
     <Tooltip
       label={label}
@@ -27,7 +20,6 @@ const RenderNavHashLink = ({
           id={`navlink-${index}`}
           onClick={(el) => {
             setCanHide(false);
-            setCurrent(index);
             document.activeElement.blur();
             scrollWithOffset(el, setCanHide);
           }}
@@ -54,15 +46,16 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
       "es"
   );
   const changeLanguage = () => {
+    window.location = "/";
     setLanguage(language === "es" ? "en" : "es");
   };
   const [current, setCurrent] = useState(0);
   useEffect(() => {
     i18n.changeLanguage(language === "es" ? "es" : "en");
     localStorage.setItem("language", language);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
-
   return (
     <Navb
       className={scrolling && "scrolling"}
@@ -97,13 +90,11 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
           )}
         />
       </Navb.Brand>
-      <Navb.Toggle aria-controls="basic-navbar-nav" />
       <Nav id="custom-nav" activeKey="">
         {Object.entries(ROUTES).map(
           (item, idx) =>
             item[0] !== "ERROR_404_NOT_FOUND" && (
               <RenderNavHashLink
-                current={current}
                 setCanHide={setCanHide}
                 setCurrent={setCurrent}
                 key={idx}

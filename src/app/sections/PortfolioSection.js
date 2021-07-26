@@ -17,16 +17,13 @@ function PortfolioSection() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const Project = ({ url, img, title, description }) => (
-    <Row style={{ height: "70%" }}>
-      <Col md={6} className="h-auto pr-4 pb-3">
-        <img
-          src={img.src}
-          sizes="(max-width: 1400px) 100vw, 1400px"
-          alt={img.alt}
-          loading="lazy"
-        />
-      </Col>
-      <Col md={6} className="h-auto text-left pl-4">
+    <Row style={{ height: "70%", width: "100%", margin: "auto" }}>
+      <Col
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("${img.src}")`,
+        }}
+        className="desc-img"
+      >
         <h5>{title} </h5>
         <p>{description}</p>
         <a
@@ -34,6 +31,7 @@ function PortfolioSection() {
           target="_blank"
           rel="noreferrer"
           className="d-flex align-items-center font-weight-normal"
+          style={{ width: "fit-content" }}
         >
           <i className="fa fa-external-link-alt" />
           {t("portfolio.see.project")}

@@ -1,5 +1,8 @@
+#quotes {
+  height: 80vh;
+}
+
 .quote-container {
-  height: 100px;
   display: flex;
   @media (min-width: $lg) {
     align-items: center;
@@ -44,11 +47,9 @@
 .quote-phrase {
   color: var(--text-dark);
   font-family: "Times New Roman", Times, serif;
-  font-size: 120%;
-}
-
-#quote-author-name {
-  color: var(--primary);
+  font-size: 130%;
+  // letter-spacing: 1px;
+  font-weight: normal;
 }
 
 #quote-author-img {

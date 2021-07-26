@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ROUTES from "../router/routes.json";
 import GoBackTopBtn from "../components/GoBackTopBtn/GoBackTopBtn";
 import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
@@ -8,6 +8,7 @@ import { useWindowDimensions } from "../util/useWindowDimensions";
 import { throttle } from "lodash";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Button, Modal } from "react-bootstrap";
 const Navbar = Loadable({
   loader: () => import("../components/Navbar/Navbar"),
   loading: LoadingScreen,
@@ -44,6 +45,14 @@ const ContactCTASection = Loadable({
   loader: () => import("../sections/ContactCTASection"),
   loading: LoadingScreen,
 });
+const SpecialThanksSection = Loadable({
+  loader: () => import("../sections/SpecialThanksSection"),
+  loading: LoadingScreen,
+});
+const AboutSection = Loadable({
+  loader: () => import("../sections/AboutSection"),
+  loading: LoadingScreen,
+});
 
 var lastScroll = 0;
 function HomePage({
@@ -54,18 +63,14 @@ function HomePage({
   theme,
   setTheme,
 }) {
+  const [showContactModal, setShowContactModal] = useState(false);
+  const handleCloseContactModal = () => setShowContactModal(false);
+  const handleShowContactModal = () => setShowContactModal(true);
   const { height } = useWindowDimensions();
   const handleScroll = () => {
     AOS.refresh();
     const bodyContainer = document.getElementById("body-container");
-    if (
-      bodyContainer &&
-      document.getElementById("home_section") &&
-      bodyContainer.scrollTop <
-        height -
-          document.getElementById("custom-navbar").getBoundingClientRect()
-            .height
-    ) {
+    if (bodyContainer && document.getElementById("home_section")) {
       document.getElementById("home_section").style.top = `${
         -0.15 * bodyContainer.scrollTop
       }px`;
@@ -112,7 +117,6 @@ function HomePage({
       once: true,
     });
   }, []);
-  //TODO: Add Call to action section (Contact)
   return (
     <>
       <Navbar
@@ -120,7 +124,7 @@ function HomePage({
         setCanHide={setCanHide}
         theme={theme}
         setTheme={setTheme}
-      />{" "}
+      />
       <div
         onScroll={handleScroll}
         data-bs-spy="scroll"
@@ -132,16 +136,35 @@ function HomePage({
         {/* <FloatingButton /> */}
         <GoBackTopBtn setCanHide={setCanHide} scrolling={scrolling} />
         <div id={ROUTES.HOME} style={{ height: "0" }}></div>
-        <HomeSection setCanHide={setCanHide} />
+        <HomeSection
+          setCanHide={setCanHide}
+          handleShowContactModal={handleShowContactModal}
+        />
+        <AboutSection />
+        <Quote />
         <PortfolioSection />
         <AbilitiesSection />
         <TrajectorySection />
         <ReferencesSection />
-        <Quote />
+        <ContactCTASection handleShowContactModal={handleShowContactModal} />
         <MadeWithSection />
-        <ContactCTASection />
+        <SpecialThanksSection />
         <Footer />
       </div>
+      <Modal show={showContactModal} onHide={handleCloseContactModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseContactModal}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleCloseContactModal}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }
