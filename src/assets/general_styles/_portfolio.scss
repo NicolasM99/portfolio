@@ -1,10 +1,11 @@
 .swiper-container {
   width: 100%;
-  height: 120%;
+  // height: 120%;
   padding-bottom: 50px !important;
 }
 .desc-img {
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   border-radius: 10px;
   display: flex;
@@ -12,6 +13,9 @@
   justify-content: flex-end;
   padding-bottom: 20px;
   min-height: 450px;
+  @media (max-width: $max-sm) {
+    min-height: 300px;
+  }
   text-align: left;
 }
 

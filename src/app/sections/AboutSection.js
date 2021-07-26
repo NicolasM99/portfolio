@@ -5,6 +5,8 @@ import GeneralSection from "../components/GeneralSection/GeneralSection";
 import ROUTES from "../router/routes.json";
 import nicolas_landscape from "../../assets/images/nicolas_landscape.jpg";
 import personalInfo from "../util/personalInfo.json";
+import cv from "../../assets/documents/cv_nicolas_moreno.pdf";
+
 const listPersonalInfo = [
   {
     icon: "fa fa-user",
@@ -70,10 +72,12 @@ function AboutSection() {
         </Col>
         <Col md={6}>
           <p id="about-description">{t("about.description")}</p>
-          <Button>
-            <i className="fa fa-cloud-download-alt" />
-            {t("general.cv")}
-          </Button>
+          <a href={cv} download="Nicolas_Moreno_CV.pdf">
+            <Button>
+              <i className="fa fa-cloud-download-alt" />
+              {t("general.cv")}
+            </Button>
+          </a>
         </Col>
       </Row>
     </div>

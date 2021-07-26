@@ -6,7 +6,7 @@ import { scrollWithOffset } from "../util/scrollWithOffset";
 import { useTranslation } from "react-i18next";
 import nmp from "../../assets/images/nicolas_moreno_posada.jpg";
 import SocialMedia from "../components/SocialMedia/SocialMedia";
-
+import cv from "../../assets/documents/cv_nicolas_moreno.pdf";
 function HomeSection({ setCanHide, handleShowContactModal }) {
   const { t } = useTranslation();
   return (
@@ -54,10 +54,12 @@ function HomeSection({ setCanHide, handleShowContactModal }) {
           <SocialMedia />
           <Row className="home-buttons-container">
             <div>
-              <Button variant="outline-primary">
-                <i className="fa fa-cloud-download-alt" />
-                {t("general.cv")}
-              </Button>
+              <a href={cv} download="Nicolas_Moreno_CV.pdf">
+                <Button variant="outline-primary">
+                  <i className="fa fa-cloud-download-alt" />
+                  {t("general.cv")}
+                </Button>
+              </a>
             </div>
             <div>
               <Button onClick={handleShowContactModal} variant="primary">

@@ -58,7 +58,7 @@ const AboutSection = Loadable({
 function HomePage({
   setScrolling,
   scrolling,
-  canHide,
+  // canHide,
   setCanHide,
   theme,
   setTheme,
