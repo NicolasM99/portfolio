@@ -54,7 +54,7 @@ const AboutSection = Loadable({
   loading: LoadingScreen,
 });
 
-var lastScroll = 0;
+// var lastScroll = 0;
 function HomePage({
   setScrolling,
   scrolling,
@@ -77,17 +77,17 @@ function HomePage({
       document.getElementById("home_section").style.opacity =
         1 - bodyContainer.scrollTop / height;
     }
-    if (canHide) {
-      setTimeout(() => {
-        const currentScroll = bodyContainer.scrollTop;
-        if (currentScroll > lastScroll + 200) {
-          if (!scrolling) setScrolling(true);
-        } else if (currentScroll < lastScroll) {
-          setScrolling(false);
-        }
-        lastScroll = currentScroll;
-      }, 200);
-    }
+    // if (canHide) {
+    //   setTimeout(() => {
+    //     const currentScroll = bodyContainer.scrollTop;
+    //     if (currentScroll > lastScroll + 200) {
+    //       if (!scrolling) setScrolling(true);
+    //     } else if (currentScroll < lastScroll) {
+    //       setScrolling(false);
+    //     }
+    //     lastScroll = currentScroll;
+    //   }, 200);
+    // }
   };
 
   const handleMouseMove = (e) => {

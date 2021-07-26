@@ -2,7 +2,7 @@
 
 button {
   padding: 15px !important;
-  outline: none;
+  outline: none !important;
   font-family: Poppins;
   &.btn {
     min-width: 100px;
@@ -25,9 +25,9 @@ button {
       transition: 0.2s;
     }
     &:active {
-      color: var(--btn-label);
-      border-color: var(--primary-darker);
-      background-color: var(--primary-darker);
+      color: var(--btn-label) !important;
+      border-color: var(--primary-darker) !important;
+      background-color: var(--primary-darker) !important;
     }
   }
 
@@ -43,9 +43,9 @@ button {
       background-color: var(--primary);
     }
     &:active {
-      color: var(--btn-label);
-      border-color: var(--primary-darker);
-      background-color: var(--primary-darker);
+      color: var(--btn-label) !important;
+      border-color: var(--primary-darker) !important;
+      background-color: var(--primary-darker) !important;
     }
   }
   i {
