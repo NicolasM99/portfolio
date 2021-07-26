@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import ROUTES from "../router/routes";
+import React from "react";
+import ROUTES from "../router/routes.json";
 import { Row, Col, Image, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { scrollWithOffset } from "../util/scrollWithOffset";
@@ -29,9 +29,9 @@ function HomeSection({ setCanHide, handleShowContactModal }) {
             <Link
               className="py-4"
               onClick={(el) => scrollWithOffset(el, setCanHide)}
-              to={"#" + ROUTES.PORTFOLIO}
+              to={"#" + ROUTES.ABOUT}
             >
-              <i className="fa fa-chevron-down animate-up-and-down mr-2" />{" "}
+              <i className="fa fa-chevron-down animate-up-and-down mr-2" />
               {t("home.about.me")}
             </Link>
           </div>

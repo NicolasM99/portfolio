@@ -49,7 +49,6 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
     window.location = "/";
     setLanguage(language === "es" ? "en" : "es");
   };
-  const [current, setCurrent] = useState(0);
   useEffect(() => {
     i18n.changeLanguage(language === "es" ? "es" : "en");
     localStorage.setItem("language", language);
@@ -96,7 +95,6 @@ function Navbar({ theme, setTheme, scrolling, setCanHide }) {
             item[0] !== "ERROR_404_NOT_FOUND" && (
               <RenderNavHashLink
                 setCanHide={setCanHide}
-                setCurrent={setCurrent}
                 key={idx}
                 route={item[1]}
                 index={idx}

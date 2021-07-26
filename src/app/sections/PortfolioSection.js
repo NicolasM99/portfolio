@@ -88,7 +88,10 @@ function PortfolioSection() {
         target="_blank"
         rel="noreferrer"
       >
-        <Button className="mt-4">{t("portfolio.see.portfolio")}</Button>
+        <Button className="mt-4">
+          <i className="fa fa-external-link-alt" />
+          {t("portfolio.see.portfolio")}
+        </Button>
       </a>
     </div>
   );

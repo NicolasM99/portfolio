@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
+import { Button, Col, Image, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import GeneralSection from "../components/GeneralSection/GeneralSection";
 import ROUTES from "../router/routes.json";
@@ -70,6 +70,10 @@ function AboutSection() {
         </Col>
         <Col md={6}>
           <p id="about-description">{t("about.description")}</p>
+          <Button>
+            <i className="fa fa-cloud-download-alt" />
+            {t("general.cv")}
+          </Button>
         </Col>
       </Row>
     </div>
