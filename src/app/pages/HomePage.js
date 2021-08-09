@@ -5,7 +5,6 @@ import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 import Loadable from "react-loadable";
 import Quote from "../sections/Quote";
 import { useWindowDimensions } from "../util/useWindowDimensions";
-import { throttle } from "lodash";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Button, Modal } from "react-bootstrap";
@@ -90,26 +89,26 @@ function HomePage({
     // }
   };
 
-  const handleMouseMove = (e) => {
-    if (e.clientY <= 100 && window.innerWidth >= 992) {
-      setScrolling(false);
-    } else if (
-      e.clientY >= window.innerHeight - 80 &&
-      window.innerWidth < 992
-    ) {
-      setScrolling(false);
-    }
-  };
+  // const handleMouseMove = (e) => {
+  //   if (e.clientY <= 100 && window.innerWidth >= 992) {
+  //     setScrolling(false);
+  //   } else if (
+  //     e.clientY >= window.innerHeight - 80 &&
+  //     window.innerWidth < 992
+  //   ) {
+  //     setScrolling(false);
+  //   }
+  // };
 
-  const handleMouseMoveThrottled = throttle(handleMouseMove, 400);
+  // const handleMouseMoveThrottled = throttle(handleMouseMove, 400);
 
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMoveThrottled);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMoveThrottled);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("mousemove", handleMouseMoveThrottled);
+  //   return () => {
+  //     window.removeEventListener("mousemove", handleMouseMoveThrottled);
+  //   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   useEffect(() => {
     AOS.init({

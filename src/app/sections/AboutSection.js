@@ -82,7 +82,9 @@ function AboutSection() {
       </Row>
     </div>
   );
-  return <GeneralSection _id={ROUTES.ABOUT} Content={Content} />;
+  return (
+    <GeneralSection animated={false} _id={ROUTES.ABOUT} Content={Content} />
+  );
 }
 
 export default AboutSection;
