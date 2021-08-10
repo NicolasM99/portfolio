@@ -7,7 +7,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper/core";
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.scss";
-import behanceProjects from "../util/behanceProjects.json";
+import { behanceProjects } from "../util/behanceProjects.js";
 import { Button, Col, Row } from "react-bootstrap";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -16,7 +16,7 @@ function PortfolioSection() {
   const { t, i18n } = useTranslation();
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  const Project = ({ url, img, title, description }) => (
+  const Project = ({ url, img, title, description, date }) => (
     <Row style={{ height: "70%", width: "100%", margin: "auto" }}>
       <Col
         style={{
@@ -25,6 +25,7 @@ function PortfolioSection() {
         className="desc-img"
       >
         <h5>{title} </h5>
+        <p className="project-date">{date}</p>
         <p>{description}</p>
         <a
           href={url}
@@ -62,6 +63,7 @@ function PortfolioSection() {
           {behanceProjects.map((project, idx) => (
             <SwiperSlide key={idx}>
               <Project
+                date={project.date}
                 url={project.url}
                 img={project.img}
                 title={

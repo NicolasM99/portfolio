@@ -3,6 +3,12 @@
   // height: 120%;
   padding-bottom: 50px !important;
 }
+
+.project-date {
+  margin-bottom: 5px;
+  font-size: 70%;
+  color: rgba(255, 255, 255, 0.4) !important;
+}
 .desc-img {
   background-repeat: no-repeat;
   background-position: center;
@@ -14,7 +20,7 @@
   padding-bottom: 20px;
   min-height: 450px;
   @media (max-width: $max-sm) {
-    min-height: 300px;
+    min-height: 350px;
   }
   text-align: left;
 }
