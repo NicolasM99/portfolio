@@ -20,7 +20,7 @@ function PortfolioSection() {
     <Row style={{ height: "70%", width: "100%", margin: "auto" }}>
       <Col
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("${img.src}")`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url("${img.src}")`,
         }}
         className="desc-img"
       >

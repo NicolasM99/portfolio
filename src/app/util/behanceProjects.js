@@ -10,7 +10,7 @@ export const behanceProjects = [
       en: "Egan Bernal Cartoon 3D",
     },
     description: {
-      es: "Modelo 3D del Ciclista Bernal como personaje Cartoon.",
+      es: "Modelo 3D del Ciclista Egan Bernal como personaje Cartoon.",
       en: "3D model of Egan Bernal as Cartoon character.",
     },
     date: "2021-08-10",

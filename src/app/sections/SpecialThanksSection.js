@@ -46,7 +46,7 @@ const Content = (t) => (
       </p>
     ))}
     <h3 className="mt-5" style={{ color: "var(--primary)" }}>
-      ...{t("special.thanks.to.you")}
+      ... {t("special.thanks.to.you")} 🎉
     </h3>
   </div>
 );
