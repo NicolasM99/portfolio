@@ -1,0 +1,11 @@
+.building-divider-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .building-divider-title{
+        color: red;
+        width: 100%;
+        text-align: center;
+    }
+}

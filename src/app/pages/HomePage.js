@@ -8,6 +8,7 @@ import { useWindowDimensions } from "../util/useWindowDimensions";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Button, Modal } from "react-bootstrap";
+import BuildingDivider from "../components/BuildingDivider/BuildingDivider";
 const Navbar = Loadable({
   loader: () => import("../components/Navbar/Navbar"),
   loading: LoadingScreen,
@@ -142,9 +143,10 @@ function HomePage({
         <AboutSection />
         <Quote />
         <PortfolioSection />
-        <AbilitiesSection />
+        <BuildingDivider />
+        {/* <AbilitiesSection />
         <TrajectorySection />
-        <ReferencesSection />
+        <ReferencesSection /> */}
         <ContactCTASection handleShowContactModal={handleShowContactModal} />
         <MadeWithSection />
         <SpecialThanksSection />
@@ -152,7 +154,7 @@ function HomePage({
       </div>
       <Modal show={showContactModal} onHide={handleCloseContactModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title><BuildingDivider />Modal heading</Modal.Title>
         </Modal.Header>
         <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
         <Modal.Footer>
