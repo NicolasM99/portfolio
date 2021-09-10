@@ -20,7 +20,7 @@ const social_media = [
   {
     name: "Instagram",
     icon: "instagram-square",
-    link: "https://www.instagram.com/",
+    link: "https://www.instagram.com/n_moreno_p/",
   },
 ];
 export default function SocialMedia({ color }) {
