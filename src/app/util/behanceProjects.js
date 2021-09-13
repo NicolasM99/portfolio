@@ -1,5 +1,37 @@
 export const behanceProjects = [
   {
+    url: "https://www.behance.net/gallery/127303695/Monsenor-Jos-Joaquin-Salcedo-Esculpido-3D",
+    img: {
+      src: require("../../assets/images/monsenor3d.gif")?.default,
+      alt: "Monseñor José Joaquín Salcedo Guarín Radio Sutatenza Esculpido Escultura 3D Sculpt Blender Render Materials Eevee Materiales",
+    },
+    title: {
+      es: "Monseñor José Joaquín Salcedo: Esculpido 3D",
+      en: "Monsignor José Joaquín Salcedo: 3D Sculpture",
+    },
+    description: {
+      es: "Modelo 3D para escultura a tamaño real.",
+      en: "3D model for real scale sculpture.",
+    },
+    date: "2021-09-13",
+  },
+  {
+    url: "https://www.behance.net/gallery/127303387/Ajedrez-en-RA",
+    img: {
+      src: require("../../assets/images/ajedrez3d.gif")?.default,
+      alt: "Ajedrez 3D RA AR Augmented Reality Realidad Aumentada",
+    },
+    title: {
+      es: "Ajedrez RA",
+      en: "AR Chess",
+    },
+    description: {
+      es: "Tracking de video para hacer un Ajedrez 3D en Realidad Aumentada.",
+      en: "Video Tracking to make a 3D Chess in Augmented Reality.",
+    },
+    date: "2021-08-30",
+  },
+  {
     url: "https://www.behance.net/gallery/125138519/Egan-Bernal-Cartoon-3D",
     img: {
       src: require("../../assets/images/eganbernal.gif")?.default,

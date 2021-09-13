@@ -19,6 +19,7 @@ function PortfolioSection() {
   const Project = ({ url, img, title, description, date }) => (
     <Row style={{ height: "70%", width: "100%", margin: "auto" }}>
       <Col
+        title={img.alt + " Nicolas Moreno Multimedia"}
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url("${img.src}")`,
         }}
