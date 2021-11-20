@@ -12,10 +12,10 @@ const listPersonalInfo = [
     icon: "fa fa-user",
     label: personalInfo.full_name,
   },
-  {
-    icon: "fa fa-phone-alt",
-    label: personalInfo.phone,
-  },
+  // {
+  //   icon: "fa fa-phone-alt",
+  //   label: personalInfo.phone,
+  // },
   {
     icon: "fa fa-envelope",
     label: personalInfo.email,
