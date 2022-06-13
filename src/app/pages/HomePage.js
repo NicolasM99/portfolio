@@ -140,9 +140,9 @@ function HomePage({
           setCanHide={setCanHide}
           handleShowContactModal={handleShowContactModal}
         />
+        <PortfolioSection />
         <AboutSection />
         <Quote />
-        <PortfolioSection />
         <BuildingDivider />
         {/* <AbilitiesSection />
         <TrajectorySection />
@@ -154,7 +154,10 @@ function HomePage({
       </div>
       <Modal show={showContactModal} onHide={handleCloseContactModal}>
         <Modal.Header closeButton>
-          <Modal.Title><BuildingDivider />Modal heading</Modal.Title>
+          <Modal.Title>
+            <BuildingDivider />
+            Modal heading
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
         <Modal.Footer>

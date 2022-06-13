@@ -6,7 +6,7 @@ import { scrollWithOffset } from "../../util/scrollWithOffset";
 import { useWindowDimensions } from "../../util/useWindowDimensions";
 import Tooltip from "../Tooltip/Tooltip";
 const icons = JSON.parse(
-  `{"${ROUTES.HOME}": "house-user","${ROUTES.ABOUT}": "info-circle", "${ROUTES.PORTFOLIO}": "briefcase","${ROUTES.ABILITIES}": "tools","${ROUTES.TRAJECTORY}": "globe-americas"}`
+  `{"${ROUTES.HOME}": "house-user", "${ROUTES.PORTFOLIO}": "briefcase","${ROUTES.ABOUT}": "info-circle","${ROUTES.ABILITIES}": "tools","${ROUTES.TRAJECTORY}": "globe-americas"}`
 );
 
 const RenderNavHashLink = ({ route, label, index, setCanHide }) => {

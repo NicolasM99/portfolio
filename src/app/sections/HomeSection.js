@@ -4,7 +4,7 @@ import { Row, Col, Image, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { scrollWithOffset } from "../util/scrollWithOffset";
 import { useTranslation } from "react-i18next";
-import nmp from "../../assets/images/nicolas_moreno_posada.jpg";
+import nmp from "../../assets/images/nicolas_moreno_posada.png";
 import SocialMedia from "../components/SocialMedia/SocialMedia";
 import cv from "../../assets/documents/cv_nicolas_moreno.pdf";
 function HomeSection({ setCanHide, handleShowContactModal }) {
@@ -29,7 +29,7 @@ function HomeSection({ setCanHide, handleShowContactModal }) {
             <Link
               className="py-4"
               onClick={(el) => scrollWithOffset(el, setCanHide)}
-              to={"#" + ROUTES.ABOUT}
+              to={"#" + ROUTES.PORTFOLIO}
             >
               <i className="fa fa-chevron-down animate-up-and-down mr-2" />
               {t("home.about.me")}
