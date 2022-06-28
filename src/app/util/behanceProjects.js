@@ -1,5 +1,37 @@
 export const behanceProjects = [
   {
+    url: "https://www.behance.net/gallery/146799403/Skynder-UI-design-branding-practice",
+    img: {
+      src: require("../../assets/images/skynder.png")?.default,
+      alt: "Skynder UI UX/UI Design Interfaz Interface Usuario User Experience Figma Concept Flight Booking",
+    },
+    title: {
+      es: "Skynder: Diseño UI y Branding",
+      en: "Skynder: UI design & branding",
+    },
+    description: {
+      es: "Concepto de aplicación móvil de reserva de vuelos como práctica de diseño UI y branding",
+      en: "Flight booking mobile application concept as UI design and branding practice.",
+    },
+    date: "2022-06-25",
+  },
+  {
+    url: "https://www.behance.net/gallery/146901511/Portfolio-website-UI-design-and-development",
+    img: {
+      src: require("../../assets/images/portfolio.png")?.default,
+      alt: "Portfolio UI UX/UI Design Interfaz Interface Usuario User Experience Figma Illustration Ilustración",
+    },
+    title: {
+      es: "Página web de portafolio: Diseño UI y Desarrollo",
+      en: "Portfolio Website: UI Design & Development",
+    },
+    description: {
+      es: "Diseño UI y desarrollo responsive para mi página web como portafolio",
+      en: "Responsive UI design and development for my website as portfolio",
+    },
+    date: "2021-07-04",
+  },
+  {
     url: "https://www.behance.net/gallery/127303695/Monsenor-Jos-Joaquin-Salcedo-Esculpido-3D",
     img: {
       src: require("../../assets/images/monsenor3d.gif")?.default,
